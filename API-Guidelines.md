@@ -195,11 +195,11 @@ Ovo se **ne smije** raditi:
 GET /students/123/course/123/teachers/123
 ```
 
-Upotrijebi `/collection/-/collection` za **sve** ugniježdene resurse **bez obzira na nadređene resurse**, ako je ta funkcionalnost potrebna.
+Upotrijebi `/collection/-/collection` za **sve** ugniježđene resurse **bez obzira na nadređene resurse**, ako je ta funkcionalnost potrebna.
 
 - Primjer: `GET /students/-/enrolled-courses` dohvaća sve upise kolegije svih studenata.
 
-Upotrijebi `/collection/-/collection/{id}` za **određeni** ugniježdeni resurs **bez obzira na nadređeni resurs**, ako je ta funkcionalnost potrebna.
+Upotrijebi `/collection/-/collection/{id}` za **određeni** ugniježđeni resurs **bez obzira na nadređeni resurs**, ako je ta funkcionalnost potrebna.
 
 - Primjer: `GET /students/-/enrolled-courses/1234` dohvaća upis kolegija s ID-jem 1234 bez obzira na studenta.
 
