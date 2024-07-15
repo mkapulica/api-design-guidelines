@@ -242,15 +242,19 @@ Resursi mogu biti **ugniježđeni** (`/collection/{id}/collection`) samo **ako j
 
 ```json
 {
-  "enrolledCourse": {
-    "id": "1234",
-    "name": "Calculus",
-    "lecturer": {
-      "id": "5678",
-      "firstName": "John",
-      "lastName": "Doe",
-      "url": "/lecturers/5678"
-    }
+  "data": {
+    "enrolledCourses": [
+      {
+        "id": "1234",
+        "name": "Calculus",
+        "lecturer": {
+          "id": "5678",
+          "firstName": "John",
+          "lastName": "Doe",
+          "url": "/lecturers/5678"
+        }
+      }
+    ]
   }
 }
 ```
