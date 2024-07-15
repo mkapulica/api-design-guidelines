@@ -149,13 +149,15 @@ Datumi i vrijeme moraju pratiti [**ISO 8601**](https://en.wikipedia.org/wiki/ISO
 
 API komunicira putem **HTTP protokola**. Svi zahtjevi i odgovori moraju biti u **formatu JSON**.
 
-Struktura JSON zahtjeva i odgovora mora pratiti sljedeću shemu (?):
+Struktura JSON odgovora mora pratiti sljedeću shemu:
 
 ```json
 {
-  "resurs": {
-    "atribut1": "vrijednost1",
-    "atribut2": "vrijednost2"
+  "data": {
+    "collectionName": {
+      "attribute1": "value1",
+      "attribute2": "value2"
+    }
   }
 }
 ```
@@ -164,16 +166,41 @@ ili za kolekciju...
 
 ```json
 {
-  "resurs": [
-    {
-      "atribut1": "vrijednost1",
-      "atribut2": "vrijednost2"
-    },
-    {
-      "atribut1": "vrijednost3",
-      "atribut2": "vrijednost4"
+  "data": {
+    "collectionName": [
+      {
+        "attribute1": "value1",
+        "attribute2": "value2"
+      },
+      {
+        "attribute1": "value1",
+        "attribute2": "value2"
+      }
+    ]
+  }
+}
+```
+
+ili za resurs s ugniježđenim resursima...
+
+```json
+{
+  "data": {
+    "collectionName": {
+      "attribute1": "value1",
+      "attribute2": "value2",
+      "nestedCollection": [
+        {
+          "attribute1": "value1",
+          "attribute2": "value2"
+        },
+        {
+          "attribute1": "value1",
+          "attribute2": "value2"
+        }
+      ]
     }
-  ]
+  }
 }
 ```
 
