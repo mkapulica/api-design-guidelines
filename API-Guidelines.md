@@ -291,7 +291,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 | `503 Service Unavailable` | Servis nije dostupan. | Greška | - |
 | `504 Gateway Timeout` | Vrijeme odgovora je isteklo. | Greška | - |
 
-**Napomene:**
+**NAPOMENE:**
 
 - Kada se dohvaća resurs koji zahtijeva autorizaciju, a korisnik nije autoriziran, mora se vratiti statusni kod `403 Forbidden`, osim u slučaju da bi samo odavanje informacije postoji li resurs moglo predstavljati kršenje privatnosti ili narušavanje sigurnosti.
 
@@ -324,7 +324,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 | `504 Gateway Timeout` | Vrijeme odgovora je isteklo. | Greška | - |
 | `507 Insufficient Storage` | Nedovoljno prostora za pohranu. | Greška | - |
 
-**Napomene:**
+**NAPOMENE:**
 
 - Pri kreiranju resursa potrebno je poslati podatke u formatu JSON. Za podatke koje kreira server, kao što je ID resursa, u dokumentaciji treba jasno naznačiti da ih kreira server (npr. Output only).
 
@@ -356,7 +356,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 | `504 Gateway Timeout` | Vrijeme odgovora je isteklo. | Greška | - |
 | `507 Insufficient Storage` | Nedovoljno prostora za pohranu. | Greška | - |
 
-**Napomene:**
+**NAPOMENE:**
 
 - Metoda `PATCH` se upotrebljava za parcijalno ažuriranje resursa. Podaci za ažuriranje moraju biti poslani u formatu JSON u request bodyju.
 - Svi podaci koji su navedeni se ažuriraju, a svi ostali ostaju nepromijenjeni. Ako se neki atribut želi postaviti na `null`, tada se mora poslati `null` kao vrijednost.
