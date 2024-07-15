@@ -290,6 +290,8 @@ Ako je potrebno filtrirati po rasponima, upotrebljavaju se `min` i `max` prefiks
 
 Za uključivanje više vrijednosti, upotrebljava se zarez. Na primjer, `/users?role=admin,user`.
 
+Za filtriranje pomoću boolean vrijednosti, upotrebljava se `true` i `false`. Na primjer, `/users?isActive=true`.
+
 #### 3.1.2. Sortiranje
 
 Sortiranje se može upotrebljavati za dohvaćanje resursa sortiranih prema određenom kriteriju.
