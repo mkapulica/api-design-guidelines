@@ -282,9 +282,13 @@ Upotrijebi `/collection/-/collection/{id}` za **određeni** ugniježđeni resurs
 
 #### 3.1.1. Filtriranje
 
-Filtriranje se može upotrebljavati za dohvaćanje resursa koji zadovoljavaju određene kriterije.
+Filtriranje se može upotrijebiti za dohvaćanje resursa koji zadovoljavaju određene kriterije.
 
 Kriteriji za filtriranje se šalju kao query parametri u formatu `field=value`. Na primjer, `/users?name=John`.
+
+Ako je potrebno filtrirati po rasponima, upotrebljavaju se `min` i `max` prefiksi. Na primjer, `/users?minAge=18&maxAge=30`.
+
+Za uključivanje više vrijednosti, upotrebljava se zarez. Na primjer, `/users?role=admin,user`.
 
 #### 3.1.2. Sortiranje
 
