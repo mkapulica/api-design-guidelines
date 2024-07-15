@@ -461,12 +461,12 @@ Mogući statusni kodovi i sadržaj odgovora:
 
 **NAPOMENE:**
 
-- Metoda `DELETE` se koristi za brisanje resursa.
+- Metoda `DELETE` se upotrebljava za brisanje resursa.
 - Metoda `DELETE` nema request body.
-- Ako metoda `DELETE` odmah izbriše resurs, tada mora vratiti status kod `204 No Content` bez response bodyja.
-- Ako je brisanje resursa duže od normalnog vremena odgovora, tada se vraća status kod `202 Accepted` zajedno s long-running operation.
-- Ako brisanje resursa nije pravo brisanje nego promjena statusa ili zastavice, tada se vraća status kod `200 OK` i promijenjeni resurs.
-- Kada se koristi HTTP metoda `DELETE` za brisanje resursa koji ne postoji, mora se vratiti status kod `404 Not Found`.
+- Ako metoda `DELETE` odmah izbriše resurs, tada mora vratiti statusni kod `204 No Content` bez response bodyja.
+- Ako je brisanje resursa duže od normalnog vremena odgovora, tada se vraća statusni kod `202 Accepted` zajedno s long-running operation.
+- Ako brisanje resursa nije pravo brisanje nego promjena statusa ili zastavice, tada se vraća statusni kod `200 OK` i promijenjeni resurs.
+- Kada se koristi HTTP metoda `DELETE` za brisanje resursa koji ne postoji, mora se vratiti statusni kod `404 Not Found`.
 
 ### 4.6. OPTIONS
 
@@ -522,9 +522,9 @@ Za autentikaciju korisnika koristi se JWT (JSON Web Token).
 
 Kada se korisnik autentificira, server mora vratiti JWT koji sadrži korisnikove podatke.
 
-Ako korisnik nije autentificiran, server mora vratiti status kod `401 Unauthorized`.
+Ako korisnik nije autentificiran, server mora vratiti statusni kod `401 Unauthorized`.
 
-Ako JWT nije ispravan, server mora vratiti status kod `401 Unauthorized`.
+Ako JWT nije ispravan, server mora vratiti statusni kod `401 Unauthorized`.
 
 ### 3.1. Primjer autentikacije
 
@@ -551,7 +551,7 @@ Content-Type: application/json
 
 - Autorizacija je proces određivanja prava pristupa resursima.
 - Korisnik mora imati odgovarajuću ulogu kako bi pristupio određenom resursu.
-- Ako korisnik nema odgovarajuću ulogu, server mora vratiti statusni kod `403 Forbidden`, osim u slučaju da bi samo odavanje informacije postoji li resurs moglo predstavljati kršenje privatnosti ili narušavanje sigurnosti. Tada se mora vratiti status kod `404 Not Found`.
+- Ako korisnik nema odgovarajuću ulogu, server mora vratiti statusni kod `403 Forbidden`, osim u slučaju da bi samo odavanje informacije postoji li resurs moglo predstavljati kršenje privatnosti ili narušavanje sigurnosti. Tada se mora vratiti statusni kod `404 Not Found`.
 
 ### 6.1. Primjer autorizacije
 
@@ -585,9 +585,9 @@ Logovi mogu sadržavati sljedeće informacije:
 
 ## 8. Greške
 
-Server mora vraćati odgovarajuće status kodove i poruke grešaka.
+Server mora vraćati odgovarajuće statusne kodove i poruke grešaka.
 
-Status kodovi i poruke grešaka moraju biti informativni i korisni.
+Statusni kodovi i poruke grešaka moraju biti informativni i korisni.
 
 ### 8.1. Poruke grešaka
 
@@ -661,7 +661,7 @@ Server upravlja svojim cacheom i daje upute klijentu kako da upravlja svojim cac
   2. Server vraća resurs s `ETag` zaglavljem.
   3. Klijent pohranjuje odgovor i njegov `ETag`.
   4. Klijent šalje novi zahtjev za resursom s `ETag` zaglavljem.
-  5. Ako se resurs nije promijenio, server vraća status kod `304 Not Modified`.
+  5. Ako se resurs nije promijenio, server vraća statusni kod `304 Not Modified`.
 
 ## 10. Statusni kodovi
 
@@ -731,7 +731,7 @@ Ukratko, drži se sljedećih pravila:
 
 ## 14. Long-running operations
 
-Ako je operacija koja se izvršava na serveru duža od normalnog vremena odgovora, tada se mora vratiti status kod `202 Accepted` zajedno s long-running operation.
+Ako je operacija koja se izvršava na serveru duža od normalnog vremena odgovora, tada se mora vratiti statusni kod `202 Accepted` zajedno s long-running operation.
 
 Long-running operation je resurs koji sadrži informacije o statusu operacije, kao što su `status`, `progress`, `result` i sl.
 
