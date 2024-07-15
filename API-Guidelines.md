@@ -269,7 +269,7 @@ Upotrijebi `/collection/-/collection/{id}` za **određeni** ugniježđeni resurs
 | Dohvat svih resursa | GET | `/collection` | `GET /users` |
 | Filtriranje | GET | `/collection?attribute=value` | `GET /users?name=John&age=20` |
 | Filtriranje (poseban filter) | GET | `/collection/{filter}` | `GET /academic-year/current` za dohvat trenutne akademske godine |
-| Sortiranje | GET | `/collection?orderBy=field:order,field:order` | `GET /users?orderBy=name:asc,age:desc` |
+| Sortiranje | GET | `/collection?orderBy=field:direction,field:direction` | `GET /users?orderBy=name:asc,age:desc` |
 | Pretraga | GET | `/collection/search?query=value` | `GET /users/search?query=John` |
 | Rad s resursom trenutnog korisnika (opcionalno) | GET | `/collection/me` | `GET /students/me/enrolled-courses` |
 
@@ -286,8 +286,8 @@ Filtriranje se može upotrijebiti za dohvaćanje resursa koji zadovoljavaju odre
 
 Sortiranje se može upotrebljavati za dohvaćanje resursa sortiranih prema određenom kriteriju:
 
-- Za sortiranje se uvijek upotrebljava query parametar `orderBy`, a podaci za sortiranje se šalju u formatu `field:order`, gdje je `field` naziv atributa po kojem se sortira, a `order` smjer sortiranja (`asc` za uzlazno i `desc` za silazno).
-- Sintaksa za sortiranje je sljedeća: `/collection?orderBy=field1:order,field2:order`. Na primjer, `/users?orderBy=name:asc,age:desc` za sortiranje po imenu uzlazno i dobi silazno.
+- Za sortiranje se uvijek upotrebljava query parametar `orderBy`, a podaci za sortiranje se šalju u formatu `field:direction`, gdje je `field` naziv atributa po kojem se sortira, a `direction` smjer sortiranja (`asc` za uzlazno i `desc` za silazno).
+- Sintaksa za sortiranje je sljedeća: `/collection?orderBy=field1:direction,field2:direction`. Na primjer, `/users?orderBy=name:asc,age:desc` za sortiranje po imenu uzlazno i dobi silazno.
 
 #### 3.1.3. Paginacija
 
