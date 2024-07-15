@@ -623,10 +623,10 @@ Server upravlja svojim cacheom i daje upute klijentu kako da upravlja svojim cac
   - `only-if-cached` - klijent traži odgovor samo iz cachea
 - Upotrebom HTTP zaglavlja `ETag` za provjeru promjena na resursu:
   1. Klijent šalje inicijalni zahtjev za resursom.
-  1. Server vraća resurs s `ETag` zaglavljem.
-  1. Klijent pohranjuje odgovor i njegov `ETag`.
-  1. Klijent šalje novi zahtjev za resursom s `ETag` zaglavljem.
-  1. Ako se resurs nije promijenio, server vraća status kod `304 Not Modified`.
+  2. Server vraća resurs s `ETag` zaglavljem.
+  3. Klijent pohranjuje odgovor i njegov `ETag`.
+  4. Klijent šalje novi zahtjev za resursom s `ETag` zaglavljem.
+  5. Ako se resurs nije promijenio, server vraća status kod `304 Not Modified`.
 
 ## 10. Statusni kodovi
 
