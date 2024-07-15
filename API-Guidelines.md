@@ -259,7 +259,7 @@ Resursi mogu biti **ugniježđeni** (`/collection/{id}/collection`) samo **ako j
 }
 ```
 
-Ovo se **ne smije** raditi:
+⛔ Ovo se **ne smije** raditi:
 
 ```http
 GET /students/123/course/123/teachers/123
