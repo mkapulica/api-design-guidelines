@@ -297,6 +297,8 @@ Paginacija je breaking change zato što bez parametra količine rezultata klijen
 
 Dohvaćeni podaci moraju sadržavati informacije o trenutnoj stranici, ukupnom broju stranica i ukupnom broju resursa.
 
+Na API-ju mora biti postavljen defaultni broj rezultata po stranici, a klijent može postaviti željeni broj rezultata po stranici koji ne smije biti veći od maksimalnog broja rezultata definiranog na API-ju.
+
 ## 4. HTTP metode
 
 ### 4.1. GET
