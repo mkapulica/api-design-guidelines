@@ -16,16 +16,19 @@ API mora biti dizajniran tako da bude:
 
 Kod imenovanja resursa, atributa i parametara treba se pridržavati sljedećih pravila:
 
-| Pravilo | Primjer | Izbjegavati |
+| 📜 Pravilo | ✅ Primjer | ⛔ Izbjegavati |
 |---------|---------|-------------|
-| **Nazivi** resursa, atributa i parametara moraju biti na (američkom) **engleskom** jeziku. | `/users` | `/korisnici` |
+| **Nazivi** resursa, atributa i parametara moraju biti na (američkom) **engleskom** jeziku. | `/users` </br> `/colors` | `/korisnici` </br> `/colours` |
 | **Nazivi** resursa, atributa i parametara moraju biti **kratki, jasni i ne preopćeniti**. | `/product` | `/item` |
 | **Nazivi resursa** moraju biti **imenice**. | `/users` | `/get-users` |
 | **Kolekcije** moraju biti dostupne na URL-ovima s imenicom u **množini**. | `/users` | `/user` |
 | Kada je resurs **jedinstven**, tada se upotrebljava imenica u **jednini**. | `/account` | `/accounts` |
 | Imena **resursa** moraju biti u `kebab-case` formatu. | `/academic-year` </br> `/messaging-group` | `/academic_year` </br> `/academicYear` |
 | Imena **atributa i parametara** moraju biti u `camelCase` formatu. | `firstName` </br> `lastName` | `first_name` </br> `FirstName` |
+| **Izbjegavati redundanciju** u imenima resursa, atributa i parametara. | `/users/{id}/groups` | `/users/{id}/user-groups` |
 | **Kratice** se pišu **malim slovima**, poput riječi. | `id` </br> `userId` | `ID` </br> `URL` |
+| Za riječ koja se piše sa **spojnicom (-)** vrijede pravila kao da se radi o više riječi. | `/real-time` </br> `realTime` | `/realtime` </br>  `realtime` |
+| **Boolean** varijable moraju imati prefiks `is`, `has`, `can`, `should` ili `allow`. | `isActive` </br> `hasChildren` | `active` </br> `children` |
 
 Sljedeće nazive potrebno je **izbjegavati** jer su preopćeniti:
 
