@@ -104,7 +104,7 @@ Sljedeći nazivi se trebaju upotrebljavati kada se pojavljuju isti koncepti. Tim
 | `pageToken`       | `string`                 | Token za paginaciju u zahtjevu za popis. |
 | `pageSize`        | `int32`                  | Veličina paginacije u zahtjevu za popis. |
 | `totalSize`       | `int32`                  | Ukupan broj stavki na popisu bez obzira na paginaciju. |
-| `nextPageToken`   | `string`                 | Sljedeći token za paginaciju u odgovoru na popis. Trebao bi se koristiti kao page_token za sljedeći zahtjev. Prazna vrijednost znači da više nema rezultata. |
+| `nextPageToken`   | `string`                 | Sljedeći token za paginaciju u odgovoru na popis. Trebao bi se koristiti kao pageToken za sljedeći zahtjev. Prazna vrijednost znači da više nema rezultata. |
 | `orderBy`         | `string`                 | Navodi redoslijed rezultata za zahtjeve dohvata nad kolekcijom. |
 | `progressPercent` | `int32`                  | Navodi napredak akcije u postocima (0-100). Vrijednost -1 znači da je napredak nepoznat. |
 | `requestId`       | `string`                 | Jedinstveni ID string za otkrivanje dupliciranih zahtjeva. |
@@ -325,9 +325,57 @@ Sortiranje se može upotrebljavati za dohvaćanje resursa sortiranih prema odre�
 
 Paginacija je breaking change zato što bez parametra količine rezultata klijent dobiva onoliko rezultata koliko server defaultno vraća, zbog čega klijent misli da je dobio sve rezultate kad zapravo nije.
 
-Dohvaćeni podaci moraju sadržavati informacije o trenutnoj stranici, ukupnom broju stranica i ukupnom broju resursa.
+Na API-ju **mora biti postavljen defaultni broj rezultata po stranici**, a klijent može postaviti željeni broj rezultata po stranici koji ne smije biti veći od **maksimalnog broja rezultata definiranog na API-ju**.
 
-Na API-ju mora biti postavljen defaultni broj rezultata po stranici, a klijent može postaviti željeni broj rezultata po stranici koji ne smije biti veći od maksimalnog broja rezultata definiranog na API-ju.
+Paginacija može biti ostvarena na dva osnovna načina:
+
+| Metoda | Opis | Primjer | Rezultat | Prednosti | Nedostaci |
+|--------|------|---------|----------|-----------|-----------|
+| **Offset-based paginacija** | Klijent šalje broj rezultata po stranici i broj stranice koju želi dohvatiti. | `GET /users?pageSize=10&page=2` | - rezultati </br> - trenutna stranica (`currentPage`) </br> - broj rezultata na trenutnoj stranici (`pageSize`) </br> - ukupan broj stranica (`totalPages`) </br> - ukupan broj rezultata (`totalSize`) | - jednostavno za implementaciju | - neefikasno za velike kolekcije </br> - moguće preskakanje/dupliciranje rezultata ako dođe do promjene u podacima |
+| **Cursor-based paginacija** | Klijent šalje broj rezultata po stranici i token koji označava trenutnu poziciju u kolekciji (na prvom dohvatu podataka nema tokena). | `GET /users?pageSize=10&pageToken=token` | - rezultati </br> - sljedeći token (`nextPageToken`) ako ima još rezultata, inače `null` kao vrijednost tokena | - efikasno za velike kolekcije </br> - nema preskakanja rezultata | - složenija implementacija </br> - prethodna stranica se pohranjuje na klijentu |
+
+**Page token** je identifikator koji označava trenutnu poziciju u kolekciji. On može biti, primjerice, ID posljednjeg rezultata na trenutnoj stranici. Page token mora biti **kriptiran** i kodiran u `base64` formatu kako bi se omogućila promjena implementacije paginacije bez utjecaja na klijente. Page token se šalje kao query parametar u zahtjevu za dohvat sljedeće stranice, a server vraća novi page token ako ima još rezultata.
+
+Postoje još neki pristupi paginaciji poput bilježenja vremena inicijalnog dohvata te zatim dohvata snapshota podataka koji su stvoreni ili zadnji put mijenjani prije tog vremena, čime se može osigurati konzistentnost podataka. Međutim, takav pristup je složeniji i manje efikasan te nema mogućnost prikaza najnovijih podataka.
+
+U svakom slučaju uz rezultate paginacije moraju se vratiti i metapodaci o paginaciji:
+
+```json
+{
+  "data": {
+    "users": [
+      {
+        "id": "1",
+        "name": "John Doe"
+      },
+      ...
+    ]
+  },
+  "pagination": {
+    "currentPage": 1,
+    "pageSize": 10,
+    "totalPages": 5,
+    "totalSize": 50
+  }
+}
+```
+
+ili...
+
+```json
+{
+  "data": {
+    "users": [
+      {
+        "id": "1",
+        "name": "John Doe"
+      },
+      ...
+    ]
+  },
+  "nextPageToken": "token"
+}
+```
 
 ## 4. HTTP metode
 
@@ -794,5 +842,4 @@ Primjer poruke u response bodyju:
 - linkovi na druge resurse: <https://web.archive.org/web/20171202064047id_/http://www.si-journal.org/index.php/JSI/article/viewFile/290/298>
 - long-running operations
 - deprecation
-- paginacija
 - puni naziv resursa (sastavljen od naziva kolekcija)
