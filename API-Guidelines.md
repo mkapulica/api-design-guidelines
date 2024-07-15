@@ -319,6 +319,8 @@ Sortiranje se može upotrebljavati za dohvaćanje resursa sortiranih prema odre�
 - Za sortiranje se uvijek upotrebljava query parametar `orderBy`, a podaci za sortiranje se šalju u formatu `field:direction`, gdje je `field` naziv atributa po kojem se sortira, a `direction` smjer sortiranja (`asc` za uzlazno i `desc` za silazno).
 - Sintaksa za sortiranje je sljedeća: `/collection?orderBy=field1:direction,field2:direction`. Na primjer, `/users?orderBy=name:asc,age:desc` za sortiranje po imenu uzlazno i dobi silazno.
 
+Sortiranje uvijek treba biti **stabilno**. To znači da ako dva resursa imaju istu vrijednost po kojoj se sortira, mora biti jednoznačno određeno kojim redoslijedom se pojavljuju. To se postiže tako da se dodaju sekundarni kriteriji sortiranja. Na primjer, ako se sortira po imenu, a dva resursa imaju isto ime, tada se sortira i po ID-ju.
+
 #### 3.1.3. Paginacija
 
 **U svakoj dinamičnoj ili većoj kolekciji resursa mora biti omogućena paginacija.** To isključuje kolekcije koje se gotovo nikad ne mijenjaju, poput statusa, tipova i vrsta. Razlog za to je da sve veće kolekcije moraju u jednom trenutku imati paginaciju kako bi se smanjila količina podataka koja se prenosi i kako bi se smanjilo opterećenje servera. A budući da je dodavanje paginacije breaking change, ona se mora dodati od početka.
@@ -326,6 +328,8 @@ Sortiranje se može upotrebljavati za dohvaćanje resursa sortiranih prema odre�
 Paginacija je breaking change zato što bez parametra količine rezultata klijent dobiva onoliko rezultata koliko server defaultno vraća, zbog čega klijent misli da je dobio sve rezultate kad zapravo nije.
 
 Na API-ju **mora biti postavljen defaultni broj rezultata po stranici**, a klijent može postaviti željeni broj rezultata po stranici koji ne smije biti veći od **maksimalnog broja rezultata definiranog na API-ju**.
+
+Kod paginacije se treba se primijeniti princip **stabilnosti sortiranja** kako bi se osigurao uvijek jednak redoslijed rezultata.
 
 Paginacija može biti ostvarena na dva osnovna načina:
 
