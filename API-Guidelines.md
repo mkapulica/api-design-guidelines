@@ -262,23 +262,16 @@ Upotrijebi `/collection/-/collection/{id}` za **određeni** ugniježđeni resurs
 
 ---
 
-- Za dohvat **jednog resursa po ID-ju**, upotrijebiti `GET /collection/{id}`
-  - Primjer: `GET /users/1234` umjesto `GET /users?id=1234`.
-- Za dohvat **više resursa s različitim ID-jevima**, upotrijebiti `batch-fetch` akciju (`POST /collection/actions/batch-fetch`) s request bodyjem `{"ids": ["1", "2", "3", ...]}`.
-  - Primjer: `POST /users/actions/batch-fetch` s request bodyjem `{"ids": ["1", "2", "3"]}`.
-- Za dohvat **svih resursa**, upotrijebiti `GET /collection`.
-  - Primjer: `GET /users`.
-- Za **filtriranje**, upotrijebiti query parametre (`/collection?attribute=value`).
-  - Primjer: `GET /users?name=John&age=20`.
-- Za **filtriranje**, ako postoji **često upotrebljavani i logičan filter**, može se napraviti zaseban endpoint samo za taj filter.**Inače se filteri dodaju isključivo kao query parametri.**
-  - Primjer: `GET /academic-year/current` za dohvat trenutne akademske godine.
-- Za **sortiranje**, upotrijebiti query parametar `orderBy`, vrijednosti odvojiti zarezom (,), a smjer sortiranja dvotočkom (:) (`/collection?orderBy=field1:order,field2:order`).
-  - `order` je smjer sortiranja (`asc` za uzlazno i `desc` za silazno).
-  - Primjer: `GET /users?orderBy=name:asc,age:desc`.
-- Za **pretragu**, koja je poseban tip filtriranja, upotrebljava se `GET /collection/search` uz obavezni parametar `query` (`GET /collection/search?query=searchQuery`).
-  - Primjer: `GET /users/search?query=John`.
-- Ako je potrebno raditi nešto pod resursom za **trenutnog korisnika**, umjesto `{id}` **može se upotrijebiti** `me`.
-  - Primjer: `GET /students/me/enrolled-courses`.
+| Akcija | Metoda | Request URL | Primjer |
+|--------|--------|----------|---------|
+| Dohvat jednog resursa po ID-ju | GET | `/collection/{id}` | `GET /users/1234` umjesto `GET /users?id=1234` |
+| Dohvat više resursa s različitim ID-jevima | POST | `/collection/actions/batch-fetch` | `POST /users/actions/batch-fetch` s request bodyjem `{"ids": ["1", "2", "3"]}` |
+| Dohvat svih resursa | GET | `/collection` | `GET /users` |
+| Filtriranje | GET | `/collection?attribute=value` | `GET /users?name=John&age=20` |
+| Filtriranje (poseban filter) | GET | `/collection/{filter}` | `GET /academic-year/current` za dohvat trenutne akademske godine |
+| Sortiranje | GET | `/collection?orderBy=field:order,field:order` | `GET /users?orderBy=name:asc,age:desc` |
+| Pretraga | GET | `/collection/search?query=value` | `GET /users/search?query=John` |
+| Rad s resursom trenutnog korisnika (opcionalno) | GET | `/collection/me` | `GET /students/me/enrolled-courses` |
 
 #### 3.1.1. Filtriranje
 
