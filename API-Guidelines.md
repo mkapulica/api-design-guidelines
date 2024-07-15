@@ -764,5 +764,4 @@ Primjer poruke u response bodyju:
 - linkovi na druge resurse: <https://web.archive.org/web/20171202064047id_/http://www.si-journal.org/index.php/JSI/article/viewFile/290/298>
 - long-running operations
 - deprecation
-- parametri filtera
 - paginacija
