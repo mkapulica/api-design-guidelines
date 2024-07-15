@@ -19,9 +19,9 @@ U današnjem svijetu razvoja softvera, kvalitetan dizajn API-ja ključan je za i
 
 Ovaj projekt se temelji na bogatom iskustvu i smjernicama vodećih tehnoloških kompanija, kao i na projektima otvorenog koda i provedenim istraživanjima na tu temu:
 
-- **Microsoft API Guidelines**: https://github.com/microsoft/api-guidelines/
-- **Google API Improvement Proposals**: https://google.aip.dev/
-- **JSON API**: https://jsonapi.org/
+- **Microsoft API Guidelines**: <https://github.com/microsoft/api-guidelines/>
+- **Google API Improvement Proposals**: <https://google.aip.dev/>
+- **JSON API**: <https://jsonapi.org/>
 
 ## Kako sudjelovati
 
