@@ -731,7 +731,7 @@ Ako je operacija koja se izvršava na serveru duža od normalnog vremena odgovor
 
 Long-running operation je resurs koji sadrži informacije o statusu operacije, kao što su `status`, `progress`, `result` i sl.
 
-Primjer long-running operationa:
+Primjer long-running akcije:
 
 ```json
 {
