@@ -275,23 +275,19 @@ Upotrijebi `/collection/-/collection/{id}` za **određeni** ugniježđeni resurs
 
 #### 3.1.1. Filtriranje
 
-Filtriranje se može upotrijebiti za dohvaćanje resursa koji zadovoljavaju određene kriterije.
+Filtriranje se može upotrijebiti za dohvaćanje resursa koji zadovoljavaju određene kriterije:
 
-Kriteriji za filtriranje se šalju kao query parametri u formatu `field=value`. Na primjer, `/users?name=John`.
-
-Ako je potrebno filtrirati po rasponima, upotrebljavaju se `min` i `max` prefiksi. Na primjer, `/users?minAge=18&maxAge=30`.
-
-Za uključivanje više vrijednosti, upotrebljava se zarez. Na primjer, `/users?role=admin,user`.
-
-Za filtriranje pomoću boolean vrijednosti, upotrebljava se `true` i `false`. Na primjer, `/users?isActive=true`.
+- Kriteriji za filtriranje se šalju kao query parametri u formatu `field=value`. Na primjer, `/users?name=John`.
+- Ako je potrebno filtrirati po rasponima, upotrebljavaju se `min` i `max` prefiksi. Na primjer, `/users?minAge=18&maxAge=30`.
+- Za uključivanje više vrijednosti, upotrebljava se zarez. Na primjer, `/users?role=admin,user`.
+- Za filtriranje pomoću boolean vrijednosti, upotrebljava se `true` i `false`. Na primjer, `/users?isActive=true`.
 
 #### 3.1.2. Sortiranje
 
-Sortiranje se može upotrebljavati za dohvaćanje resursa sortiranih prema određenom kriteriju.
+Sortiranje se može upotrebljavati za dohvaćanje resursa sortiranih prema određenom kriteriju:
 
-Za sortiranje se uvijek upotrebljava query parametar `orderBy`, a podaci za sortiranje se šalju u formatu `field:order`, gdje je `field` naziv atributa po kojem se sortira, a `order` smjer sortiranja (`asc` za uzlazno i `desc` za silazno).
-
-Sintaksa za sortiranje je sljedeća: `/collection?orderBy=field1:order,field2:order`. Na primjer, `/users?orderBy=name:asc,age:desc` za sortiranje po imenu uzlazno i dobi silazno.
+- Za sortiranje se uvijek upotrebljava query parametar `orderBy`, a podaci za sortiranje se šalju u formatu `field:order`, gdje je `field` naziv atributa po kojem se sortira, a `order` smjer sortiranja (`asc` za uzlazno i `desc` za silazno).
+- Sintaksa za sortiranje je sljedeća: `/collection?orderBy=field1:order,field2:order`. Na primjer, `/users?orderBy=name:asc,age:desc` za sortiranje po imenu uzlazno i dobi silazno.
 
 #### 3.1.3. Paginacija
 
