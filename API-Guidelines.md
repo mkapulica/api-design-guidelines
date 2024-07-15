@@ -796,3 +796,4 @@ Primjer poruke u response bodyju:
 - long-running operations
 - deprecation
 - paginacija
+- puni naziv resursa (sastavljen od naziva kolekcija)
