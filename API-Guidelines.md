@@ -291,7 +291,9 @@ Sortiranje se može upotrebljavati za dohvaćanje resursa sortiranih prema odre�
 
 #### 3.1.3. Paginacija
 
-U svakoj dinamičnoj ili većoj kolekciji resursa mora biti omogućena paginacija. To isključuje kolekcije koje se gotovo nikad ne mijenjaju, poput statusa, tipova i vrsta.
+**U svakoj dinamičnoj ili većoj kolekciji resursa mora biti omogućena paginacija.** To isključuje kolekcije koje se gotovo nikad ne mijenjaju, poput statusa, tipova i vrsta. Razlog za to je da sve veće kolekcije moraju u jednom trenutku imati paginaciju kako bi se smanjila količina podataka koja se prenosi i kako bi se smanjilo opterećenje servera. A budući da je dodavanje paginacije breaking change, ona se mora dodati od početka.
+
+Paginacija je breaking change zato što bez parametra količine rezultata klijent dobiva onoliko rezultata koliko server defaultno vraća, zbog čega klijent misli da je dobio sve rezultate kad zapravo nije.
 
 Dohvaćeni podaci moraju sadržavati informacije o trenutnoj stranici, ukupnom broju stranica i ukupnom broju resursa.
 
