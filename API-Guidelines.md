@@ -64,7 +64,7 @@ Kod imenovanja resursa, atributa i parametara treba se pridržavati sljedećih p
 | **Izbjegavati redundanciju** u imenima resursa, atributa i parametara. | `/users/{id}/groups` | `/users/{id}/user-groups` |
 | **Kratice** se pišu **malim slovima**, poput riječi. | `id` </br> `userId` | `ID` </br> `URL` |
 | Za riječ koja se piše sa **spojnicom (-)** vrijede pravila kao da se radi o više riječi. | `/real-time` </br> `realTime` | `/realtime` </br>  `realtime` |
-| **Boolean** varijable moraju imati prefiks `is`, `has`, `can`, `should` ili `allow`. | `isActive` </br> `hasChildren` | `active` </br> `children` |
+| **Boolean** varijable moraju imati prefiks `is`, `has`, `can`, `should`, `allow` ili `show`. | `isActive` </br> `hasChildren` | `active` </br> `children` |
 
 Sljedeće nazive potrebno je **izbjegavati** jer su preopćeniti:
 
@@ -108,7 +108,6 @@ Sljedeći nazivi se trebaju upotrebljavati kada se pojavljuju isti koncepti. Tim
 | `orderBy`         | `string`                 | Navodi redoslijed rezultata za zahtjeve dohvata nad kolekcijom. |
 | `progressPercent` | `int32`                  | Navodi napredak akcije u postocima (0-100). Vrijednost -1 znači da je napredak nepoznat. |
 | `requestId`       | `string`                 | Jedinstveni ID string za otkrivanje dupliciranih zahtjeva. |
-| `resumeToken`     | `string`                 | Opaque token koji se koristi za nastavak strujnog zahtjeva. |
 | `labels`          | `map<string, string>`    | Predstavlja korisničke oznake resursa. |
 | `showDeleted`     | `bool`                   | Ako resurs dopušta povratak izbrisanih entiteta, metoda dohvata kolekcije mora imati parametar show_deleted kako bi klijent mogao otkriti obrisane resurse. |
 | `validateOnly`    | `bool`                   | Ako je true, označava da se zahtjev samo treba validirati, a ne izvršiti. |
