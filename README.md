@@ -29,8 +29,9 @@ Slobodno sudjelujte u ovom projektu! Evo kako možete pomoći:
 
 1. **Doprinesite smjernicama**: Pregledajte postojeće smjernice, predložite poboljšanja ili nove smjernice.
 2. **Doprinesite primjerima**: Pregledajte smjernice te predložite nove primjere ili izmjenu postojećih primjera.
-3. **Podijelite povratne informacije**: Vaše mišljenje je važno! Pomozite unaprijediti smjernice dajući povratne informacije.
-4. **Širite riječ**: Podijelite ovaj projekt s kolegama i širom zajednicom softver developera.
+3. **Doprinesite formatiranjem**: Predložite izmjene u formatiranju teksta za poboljšanje čitljivosti ili bolje isticanje bitnijih stavki.
+4. **Podijelite povratne informacije**: Vaše mišljenje je važno! Pomozite unaprijediti smjernice dajući povratne informacije.
+5. **Širite riječ**: Podijelite ovaj projekt s kolegama i širom zajednicom softver developera.
 
 ## Uporaba projekta
 
