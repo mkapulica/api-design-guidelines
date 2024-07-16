@@ -66,6 +66,53 @@ Kod imenovanja resursa, atributa i parametara treba se pridržavati sljedećih p
 | Za riječ koja se piše sa **spojnicom (-)** vrijede pravila kao da se radi o više riječi. | `/real-time` </br> `realTime` | `/realtime` </br>  `realtime` |
 | **Boolean** varijable moraju imati prefiks `is`, `has`, `can`, `should`, `allow` ili `show`. | `isActive` </br> `hasChildren` | `active` </br> `children` |
 
+**Oznake resursa** su jedinstveni identifikator određenog resursa na API-ju i njihov naziv se formira spajanjem naziva kolekcija u URL-u, ali primjenom imenica u jednini i u formatu `camelCase`. U slučaju da je samo dio URL-a dovoljan za stvaranje jedinstvene oznake i ta oznaka jasno predstavlja resurs, tada nije potrebno navoditi sve nazive kolekcija iz URL-a u oznaci resursa. Na primjer:
+
+- za URL `/users/{id}` oznaka resursa je `user`
+- za URL `/users/{id}/groups/{id}` oznaka resursa je `userGroup`
+- za URL `/academic-years/{id}` oznaka resursa je `academicYear`
+- za URL `/students/{id}/enrolled-courses/{id}` oznaka resursa je `enrolledCourse` (jer je jasno da se radi o podacima o upisu kolegija)
+
+Za **oznake skupine resursa** upotrebljava se **oznaka resursa u množini**. Na primjer:
+
+- za URL `/users` oznaka skupine resursa je `users`
+- za URL `/users/{id}/groups` oznaka skupine resursa je `userGroups`
+- za URL `/students/{id}/enrolled-courses` oznaka skupine resursa je `enrolledCourses`
+- za URL `/academic-years` oznaka skupine resursa je `academicYears`
+
+Primjeri primjene oznaka resursa:
+
+```json
+{
+  "data": {
+    "user": {
+      "id": "1234",
+      "name": "John Doe",
+      "email": ""
+    }
+  }
+}
+```
+
+```json
+{
+  "data": {
+    "users": [
+      {
+        "id": "1234",
+        "name": "John Doe",
+        "email": ""
+      },
+      {
+        "id": "5678",
+        "name": "Jane Doe",
+        "email": ""
+      }
+    ]
+  }
+}
+```
+
 Sljedeće nazive potrebno je **izbjegavati** jer su preopćeniti:
 
 - elements
@@ -850,4 +897,3 @@ Primjer poruke u response bodyju:
 - linkovi na druge resurse: <https://web.archive.org/web/20171202064047id_/http://www.si-journal.org/index.php/JSI/article/viewFile/290/298>
 - long-running operations
 - deprecation
-- puni naziv resursa (sastavljen od naziva kolekcija)
