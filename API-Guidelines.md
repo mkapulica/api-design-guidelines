@@ -59,7 +59,7 @@ Kod imenovanja resursa, atributa i parametara treba se pridržavati sljedećih p
 | **Nazivi** resursa, atributa i parametara moraju biti **kratki, jasni i ne preopćeniti**. | `/product` | `/item` |
 | **Nazivi resursa** moraju biti **imenice**. | `/users` | `/get-users` |
 | **Kolekcije** moraju biti dostupne na URL-ovima s imenicom u **množini**. | `/users` | `/user` |
-| Kada je resurs **jedinstven**, tada se upotrebljava imenica u **jednini**. | `/account` | `/accounts` |
+| Kada resurs **nije kolekcija**, tada se upotrebljava imenica u **jednini**. | `/account` | `/accounts` |
 | Imena **resursa** moraju biti u `kebab-case` formatu. | `/academic-year` </br> `/messaging-group` | `/academic_year` </br> `/academicYear` |
 | Imena **atributa i parametara** moraju biti u `camelCase` formatu. | `firstName` </br> `lastName` | `first_name` </br> `FirstName` |
 | **Izbjegavati redundanciju** u imenima resursa, atributa i parametara. | `/users/{id}/groups` | `/users/{id}/user-groups` |
