@@ -333,7 +333,7 @@ Paginacija je breaking change zato što bez parametra količine rezultata klijen
 
 Na API-ju **mora biti postavljen defaultni broj rezultata po stranici**, a klijent može postaviti željeni broj rezultata po stranici koji ne smije biti veći od **maksimalnog broja rezultata definiranog na API-ju**.
 
-Kod paginacije se treba se primijeniti princip **stabilnosti sortiranja** kako bi se osigurao uvijek jednak redoslijed rezultata.
+Kod paginacije se treba se primijeniti princip **stabilnosti sortiranja** kako bi se osigurao uvijek jednak redoslijed rezultata. Također je potrebno uz za svaku sljedeću stranicu **slati primijenjene filtre i sortiranje**.
 
 Paginacija može biti ostvarena na dva osnovna načina:
 
