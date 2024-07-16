@@ -149,7 +149,8 @@ Sljedeći nazivi se trebaju upotrebljavati kada se pojavljuju isti koncepti. Tim
 | `filter`          | `string`                 | Standardni parametar filtra za metode popisa. Pogledajte AIP-160. |
 | `query`           | `string`                 | Isto kao i filter ako se primjenjuje na metodu pretraživanja (npr. :search) |
 | `pageToken`       | `string`                 | Token za paginaciju u zahtjevu za popis. |
-| `currentPage`     | `int32`                  | Trenutna stranica u paginaciji. |
+| `page`            | `int32`                  | Stranica u paginaciji (query parametar). |
+| `currentPage`     | `int32`                  | Trenutna stranica u paginaciji (response body). |
 | `pageSize`        | `int32`                  | Veličina paginacije u zahtjevu za popis. |
 | `totalPages`      | `int32`                  | Ukupan broj stranica liste bez obzira na paginaciju. |
 | `totalSize`       | `int32`                  | Ukupan broj stavki u listi bez obzira na paginaciju. |
