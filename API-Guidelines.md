@@ -102,8 +102,10 @@ Sljedeći nazivi se trebaju upotrebljavati kada se pojavljuju isti koncepti. Tim
 | `filter`          | `string`                 | Standardni parametar filtra za metode popisa. Pogledajte AIP-160. |
 | `query`           | `string`                 | Isto kao i filter ako se primjenjuje na metodu pretraživanja (npr. :search) |
 | `pageToken`       | `string`                 | Token za paginaciju u zahtjevu za popis. |
+| `currentPage`     | `int32`                  | Trenutna stranica u paginaciji. |
 | `pageSize`        | `int32`                  | Veličina paginacije u zahtjevu za popis. |
-| `totalSize`       | `int32`                  | Ukupan broj stavki na popisu bez obzira na paginaciju. |
+| `totalPages`      | `int32`                  | Ukupan broj stranica liste bez obzira na paginaciju. |
+| `totalSize`       | `int32`                  | Ukupan broj stavki u listi bez obzira na paginaciju. |
 | `nextPageToken`   | `string`                 | Sljedeći token za paginaciju u odgovoru na popis. Trebao bi se koristiti kao pageToken za sljedeći zahtjev. Prazna vrijednost znači da više nema rezultata. |
 | `orderBy`         | `string`                 | Navodi redoslijed rezultata za zahtjeve dohvata nad kolekcijom. |
 | `progressPercent` | `int32`                  | Navodi napredak akcije u postocima (0-100). Vrijednost -1 znači da je napredak nepoznat. |
