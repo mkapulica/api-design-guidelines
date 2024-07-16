@@ -26,7 +26,8 @@
     - [6.1. Primjer autorizacije](#61-primjer-autorizacije)
   - [7. Logiranje](#7-logiranje)
   - [8. Greške](#8-greške)
-    - [8.1. Poruke grešaka](#81-poruke-grešaka)
+    - [8.1. Greške u zahtjevu](#81-greške-u-zahtjevu)
+    - [8.2. Poruke grešaka](#82-poruke-grešaka)
   - [9. Caching](#9-caching)
   - [10. Statusni kodovi](#10-statusni-kodovi)
   - [11. Dokumentacija](#11-dokumentacija)
@@ -728,7 +729,15 @@ Server mora vraćati odgovarajuće statusne kodove i poruke grešaka.
 
 Statusni kodovi i poruke grešaka moraju biti informativni i korisni.
 
-### 8.1. Poruke grešaka
+### 8.1. Greške u zahtjevu
+
+---
+
+Može se dogoditi da klijent pošalje zahtjev koji nije sasvim neispravan, ali nije u potpunosti ispravan. Na primjer, kod paginacije klijent može poslati zahtjev za dohvat stranice koja ne postoji. Tada treba vratiti statusni kod `204 No Content`. Ili kada klijent zatraži više rezultata po stranici nego što je dozvoljeno. Tada treba uzeti u obzir da klijent ne zna koliko rezultata po stranici je dozvoljeno, pa je potrebno izvršiti paginaciju s najvećim dozvoljenim brojem rezultata po stranici.
+
+Ako se pak radi o djelomičnom ažuriranju resursa (metoda `PATCH`) i klijent pošalje podatke koji ne postoje, tada bi bilo dobro ažurirati samo one podatke koji postoje, a ostale ignorirati. Razlog tome je što se može dogoditi da su neki atributi uklonjeni, ali klijent ne zna za tu promjenu.
+
+### 8.2. Poruke grešaka
 
 ---
 
@@ -904,3 +913,4 @@ Link: <https://example.com/docs/v2>; rel="deprecation" type:"text/html"
 
 - linkovi na druge resurse: <https://web.archive.org/web/20171202064047id_/http://www.si-journal.org/index.php/JSI/article/viewFile/290/298>
 - long-running operations
+- greške u zahtjevima
