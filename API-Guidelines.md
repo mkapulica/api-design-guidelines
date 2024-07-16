@@ -912,5 +912,9 @@ Link: <https://example.com/docs/v2>; rel="deprecation" type:"text/html"
 ## TODO
 
 - linkovi na druge resurse: <https://web.archive.org/web/20171202064047id_/http://www.si-journal.org/index.php/JSI/article/viewFile/290/298>
-- long-running operations
+- long-running operations:
+  - <https://github.com/microsoft/api-guidelines/blob/vNext/graph/patterns/long-running-operations.md>
+  - <https://cloud.google.com/document-ai/docs/long-running-operations>
+  - <https://google.aip.dev/151>
+  - <https://cloud.ibm.com/docs/api-handbook?topic=api-handbook-long-running-operations>
 - greške u zahtjevima
