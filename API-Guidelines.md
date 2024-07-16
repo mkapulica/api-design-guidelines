@@ -81,6 +81,8 @@ Za **oznake skupine resursa** upotrebljava se **oznaka resursa u množini**. Na 
 - za URL `/students/{id}/enrolled-courses` oznaka skupine resursa je `enrolledCourses`
 - za URL `/academic-years` oznaka skupine resursa je `academicYears`
 
+Oznake resursa su korisne za jednostavno referenciranje resursa u dokumentaciji i logiranju, te omogućuju da svakome tko promatra odgovor odmah bude jasno o kojim podacima se radi.
+
 Primjeri primjene oznaka resursa:
 
 ```json
