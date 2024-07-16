@@ -464,7 +464,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 | `204 No Content` | Nema rezultata s traženim kriterijima pretrage/filtriranja. | - | - |
 | `304 Not Modified` | Resurs nije promijenjen od zadnjeg upita (za uštedu bandwidtha). | - | - |
 | `400 Bad Request` | Zahtjev nije ispravan. | Greška | - |
-| `401 Unauthorized` | Korisnik nije autentificiran. | Greška | - |
+| `401 Unauthorized` | Korisnik nije autentificiran. | Greška | `WWW-Authenticate` s popisom načina autentikacije |
 | `403 Forbidden` | Korisnik nema dozvolu za pristup resursu. | Greška | - |
 | `404 Not Found` | Resurs nije pronađen (ili korisnik nema dozvolu). | Greška | - |
 | `405 Method Not Allowed` | Metoda nije dozvoljena za traženi resurs. | Greška | `Allow` s popisom dozvoljenih metoda |
@@ -494,7 +494,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 | `204 No Content` | Akcija je uspješno izvršena (rezultat nije potrebno vratiti klijentu). | - | - |
 | `304 Not Modified` | Resurs nije promijenjen (za uštedu bandwidtha). | - | - |
 | `400 Bad Request` | Zahtjev nije ispravan. | Greška | - |
-| `401 Unauthorized` | Korisnik nije autentificiran. | Greška | - |
+| `401 Unauthorized` | Korisnik nije autentificiran. | Greška | `WWW-Authenticate` s popisom načina autentikacije |
 | `403 Forbidden` | Korisnik nema dozvolu za pristup resursu. | Greška | - |
 | `404 Not Found` | Resurs nije pronađen (ili korisnik nema dozvolu). | Greška | - |
 | `405 Method Not Allowed` | Metoda nije dozvoljena za traženi resurs. | Greška | `Allow` s popisom dozvoljenih metoda |
@@ -526,7 +526,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 | `204 No Content` | Ažuriranje je uspješno izvršeno (rezultat nije potrebno vratiti klijentu). | - | - |
 | `304 Not Modified` | Resurs nije promijenjen (za uštedu bandwidtha). | - | - |
 | `400 Bad Request` | Zahtjev nije ispravan. | Greška | - |
-| `401 Unauthorized` | Korisnik nije autentificiran. | Greška | - |
+| `401 Unauthorized` | Korisnik nije autentificiran. | Greška | `WWW-Authenticate` s popisom načina autentikacije |
 | `403 Forbidden` | Korisnik nema dozvolu za pristup resursu. | Greška | - |
 | `404 Not Found` | Resurs nije pronađen (ili korisnik nema dozvolu). | Greška | - |
 | `405 Method Not Allowed` | Metoda nije dozvoljena za traženi resurs. | Greška | `Allow` s popisom dozvoljenih metoda |
@@ -563,7 +563,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 | `204 No Content` | Ažuriranje je uspješno izvršeno (rezultat nije potrebno vratiti klijentu). | - | - |
 | `304 Not Modified` | Resurs nije promijenjen (za uštedu bandwidtha). | - | - |
 | `400 Bad Request` | Zahtjev nije ispravan. | Greška | - |
-| `401 Unauthorized` | Korisnik nije autentificiran. | Greška | - |
+| `401 Unauthorized` | Korisnik nije autentificiran. | Greška | `WWW-Authenticate` s popisom načina autentikacije |
 | `403 Forbidden` | Korisnik nema dozvolu za pristup resursu. | Greška | - |
 | `404 Not Found` | Resurs nije pronađen (ili korisnik nema dozvolu). | Greška | - |
 | `405 Method Not Allowed` | Metoda nije dozvoljena za traženi resurs. | Greška | `Allow` s popisom dozvoljenih metoda |
@@ -596,7 +596,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 | `202 Accepted` | Zahtjev je prihvaćen, ali nije završen. | - | - |
 | `204 No Content` | Resurs je uspješno obrisan. | - | - |
 | `400 Bad Request` | Zahtjev nije ispravan. | Greška | - |
-| `401 Unauthorized` | Korisnik nije autentificiran. | Greška | - |
+| `401 Unauthorized` | Korisnik nije autentificiran. | Greška | `WWW-Authenticate` s popisom načina autentikacije |
 | `403 Forbidden` | Korisnik nema dozvolu za pristup resursu. | Greška | - |
 | `404 Not Found` | Resurs nije pronađen (ili korisnik nema dozvolu). | Greška | - |
 | `405 Method Not Allowed` | Metoda nije dozvoljena za traženi resurs. | Greška | `Allow` s popisom dozvoljenih metoda |
@@ -626,7 +626,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 | Statusni kod | Opis | Response body | Response headers |
 |--------------|------|---------------|------------------|
 | `200 OK` | Dohvat je uspješno izvršen. | - | `Allow` s popisom dozvoljenih metoda |
-| `401 Unauthorized` | Korisnik nije autentificiran. | Greška | - |
+| `401 Unauthorized` | Korisnik nije autentificiran. | Greška | `WWW-Authenticate` s popisom načina autentikacije |
 | `403 Forbidden` | Korisnik nema dozvolu za pristup resursu. | Greška | - |
 | `404 Not Found` | Resurs nije pronađen. | Greška | - |
 | `500 Internal Server Error` | Greška na serveru. | Greška | - |
@@ -650,7 +650,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 | Statusni kod | Opis | Response body | Response headers |
 |--------------|------|---------------|------------------|
 | `200 OK` | Dohvat je uspješno izvršen. | - | - |
-| `401 Unauthorized` | Korisnik nije autentificiran. | Greška | - |
+| `401 Unauthorized` | Korisnik nije autentificiran. | Greška | `WWW-Authenticate` s popisom načina autentikacije |
 | `403 Forbidden` | Korisnik nema dozvolu za pristup resursu. | Greška | - |
 | `404 Not Found` | Resurs nije pronađen. | Greška | - |
 | `500 Internal Server Error` | Greška na serveru. | Greška | - |
