@@ -889,18 +889,19 @@ Primjer long-running akcije:
 
 Kada se API mijenja, a neke metode ili resursi postaju zastarjeli, tada se mora obavijestiti korisnike o depriciranim resursima i metodama.
 
-To se može napraviti slanjem poruke u response bodyju ili kroz HTTP zaglavlje.
+To se može napraviti slanjem [`Deprecation`](https://datatracker.ietf.org/doc/html/draft-ietf-httpapi-deprecation-header) HTTP zaglavlja u odgovoru zajedno s UNIX timestampom od kada je resurs ili metoda zastarjela. Uz `Deprecation` zaglavlje može se poslati i `Sunset` zaglavlje koje sadrži ljudski čitljiv datum kada će resurs ili metoda biti uklonjeni, te `Link` zaglavlje s poveznicom na dokumentaciju o promjenama.
 
-Primjer poruke u response bodyju:
+Primjer HTTP zaglavlja:
 
-```json
-{
-  "message": "This resource is deprecated and will be removed in the next version of the API."
-}
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Deprecation: @1688169599
+Sunset: Fri, 31 Dec 2030 23:59:59 GMT
+Link: <https://example.com/docs/v2>; rel="deprecation" type:"text/html"
 ```
 
 ## TODO
 
 - linkovi na druge resurse: <https://web.archive.org/web/20171202064047id_/http://www.si-journal.org/index.php/JSI/article/viewFile/290/298>
 - long-running operations
-- deprecation
