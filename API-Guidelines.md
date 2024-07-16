@@ -316,7 +316,7 @@ Resursi mogu biti **ugniježđeni** (`/collection/{id}/collection`) samo **ako j
 ⛔ Ovo se **ne smije** raditi jer profesori (`lecturers`) mogu biti definirani i samostalno, tj. ne pripadaju samo i jedino upisanim kolegijima studenta:
 
 ```http
-GET /students/12/course/1234/lecturers/5678
+GET /students/1234/enrolled-courses/1234/lecturers/5678
 ```
 
 Upotrijebi `/collection/-/collection` za **sve** ugniježđene resurse **bez obzira na nadređene resurse**, ako je ta funkcionalnost potrebna.
