@@ -354,6 +354,12 @@ Upotrijebi `/collection/-/collection/{id}` za **određeni** ugniježđeni resurs
 | Pretraga | GET | `/collection/search?query=value` | `GET /users/search?query=John` |
 | Rad s resursom trenutnog korisnika (opcionalno) | GET | `/collection/me` | `GET /students/me/enrolled-courses` |
 
+Primjer uporabe kombinacije akcija:
+
+```http
+GET /users?name=John&age=20&orderBy=name:asc,age:desc&pageSize=10&page=2
+```
+
 #### 3.1.1. Filtriranje
 
 Filtriranje se može upotrijebiti za dohvaćanje resursa koji zadovoljavaju određene kriterije:
