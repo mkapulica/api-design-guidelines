@@ -399,7 +399,7 @@ Paginacija može biti ostvarena na dva osnovna načina:
 | Metoda | Opis | Primjer | Rezultat | Prednosti | Nedostaci |
 |--------|------|---------|----------|-----------|-----------|
 | **Offset-based paginacija** | Klijent šalje broj rezultata po stranici i broj stranice koju želi dohvatiti. | `GET /users?pageSize=10&page=2` | - rezultati </br> - trenutna stranica (`currentPage`) </br> - broj rezultata na trenutnoj stranici (`pageSize`) </br> - ukupan broj stranica (`totalPages`) </br> - ukupan broj rezultata (`totalSize`) | - jednostavno za implementaciju | - neefikasno za velike kolekcije </br> - moguće preskakanje/dupliciranje rezultata ako dođe do promjene u podacima |
-| **Cursor-based paginacija** | Klijent šalje broj rezultata po stranici i token koji označava trenutnu poziciju u kolekciji (na prvom dohvatu podataka nema tokena). | `GET /users?pageSize=10&pageToken=token` | - rezultati </br> - sljedeći token (`nextPageToken`) ako ima još rezultata, inače `null` kao vrijednost tokena | - efikasno za velike kolekcije </br> - nema preskakanja rezultata | - složenija implementacija </br> - prethodna stranica se pohranjuje na klijentu |
+| **Cursor-based paginacija** | Klijent šalje broj rezultata po stranici i token koji označava trenutnu poziciju u kolekciji (na prvom dohvatu podataka nema tokena). | `GET /users?pageSize=10&pageToken=token` | - rezultati </br> - sljedeći token (`nextPageToken`) ako ima još rezultata, inače `null` kao vrijednost tokena </br> - broj rezultata na trenutnoj "stranici" (`pageSize`) | - efikasno za velike kolekcije </br> - nema preskakanja rezultata | - složenija implementacija </br> - prethodna stranica se pohranjuje na klijentu |
 
 **Page token** je identifikator koji označava trenutnu poziciju u kolekciji. On može biti, primjerice, ID posljednjeg rezultata na trenutnoj stranici. Page token mora biti **kriptiran** i kodiran u `base64` formatu kako bi se omogućila promjena implementacije paginacije bez utjecaja na klijente. Page token se šalje kao query parametar u zahtjevu za dohvat sljedeće stranice, a server vraća novi page token ako ima još rezultata.
 
@@ -440,7 +440,10 @@ ili...
       ...
     ]
   },
-  "nextPageToken": "token"
+  "pagination": {
+    "nextPageToken": "token",
+    "pageSize": 10
+  }
 }
 ```
 
