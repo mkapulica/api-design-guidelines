@@ -269,13 +269,15 @@ Primjer odgovora statusnog endpointa:
 
 ```json
 {
-  "status": "Healthy",
-  "version": "v1",
-  "environment": "Production",
-  "timestamp": "2024-01-01T00:00:00Z",
-  "dependencies": {
-    "database": "Healthy",
-    "otherApi": "Healthy"
+  "data": {
+    "status": "Healthy",
+    "version": "v1",
+    "environment": "Production",
+    "timestamp": "2024-01-01T00:00:00Z",
+    "dependencies": {
+      "database": "Healthy",
+      "otherApi": "Healthy"
+    }
   }
 }
 ```
