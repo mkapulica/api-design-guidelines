@@ -302,6 +302,8 @@ Upotrijebi `/collection/-/collection/{id}` za **određeni** ugniježđeni resurs
 | Filtriranje | GET | `/collection?attribute=value` | `GET /users?name=John&age=20` |
 | Filtriranje (poseban filter) | GET | `/collection/{filter}` | `GET /academic-year/current` za dohvat trenutne akademske godine |
 | Sortiranje | GET | `/collection?orderBy=field:direction,field:direction` | `GET /users?orderBy=name:asc,age:desc` |
+| Paginacija (offset) | GET | `/collection?pageSize=10&page=2` | `GET /users?pageSize=10&page=2` |
+| Paginacija (cursor) | GET | `/collection?pageSize=10&pageToken=token` | `GET /users?pageSize=10&pageToken=token` |
 | Pretraga | GET | `/collection/search?query=value` | `GET /users/search?query=John` |
 | Rad s resursom trenutnog korisnika (opcionalno) | GET | `/collection/me` | `GET /students/me/enrolled-courses` |
 
