@@ -321,10 +321,12 @@ GET /students/1234/enrolled-courses/1234/lecturers/5678
 
 Upotrijebi `/collection/-/collection` za **sve** ugniježđene resurse **bez obzira na nadređene resurse**, ako je ta funkcionalnost potrebna.
 
+- Rezultat je iste strukture kao i za `/collection/{id}/collection`.
 - Primjer: `GET /students/-/enrolled-courses` dohvaća sve upise kolegije svih studenata.
 
 Upotrijebi `/collection/-/collection/{id}` za **određeni** ugniježđeni resurs **bez obzira na nadređeni resurs**, ako je ta funkcionalnost potrebna.
 
+- Rezultat je iste strukture kao i za `/collection/{id}/collection/{id}`.
 - Primjer: `GET /students/-/enrolled-courses/1234` dohvaća upis kolegija s ID-jem 1234 bez obzira na studenta.
 
 ## 3. Akcije nad resursima
