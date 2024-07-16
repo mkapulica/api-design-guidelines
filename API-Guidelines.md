@@ -585,7 +585,6 @@ Mogući statusni kodovi i sadržaj odgovora:
 
 | Statusni kod | Opis | Response body | Response headers |
 |--------------|------|---------------|------------------|
-| `200 OK` | Dohvat je uspješno izvršen. | Resurs | - |
 | `202 Accepted` | Zahtjev je prihvaćen, ali nije završen. | - | - |
 | `204 No Content` | Resurs je uspješno obrisan. | - | - |
 | `400 Bad Request` | Zahtjev nije ispravan. | Greška | - |
