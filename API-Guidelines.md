@@ -368,6 +368,22 @@ Primjer uporabe kombinacije akcija:
 GET /users?name=John&age=20&orderBy=name:asc,age:desc&pageSize=10&page=2
 ```
 
+Ako primijenjeni filtri ili parametri paginacije **ne daju rezultate**, API tada **mora vratiti praznu listu**. Na primjer.:
+
+```json
+{
+  "data": {
+    "users": []
+  }
+  "pagination": {
+    "currentPage": 1,
+    "pageSize": 0,
+    "totalPages": 0,
+    "totalSize": 0
+  }
+}
+```
+
 #### 3.1.1. Filtriranje
 
 Filtriranje se može upotrijebiti za dohvaćanje resursa koji zadovoljavaju određene kriterije:
@@ -463,7 +479,6 @@ Mogući statusni kodovi i sadržaj odgovora:
 |--------------|------|---------------|------------------|
 | `200 OK` | Dohvat je uspješno izvršen. | Resurs | - |
 | `202 Accepted` | Zahtjev je prihvaćen, ali nije završen. | - | - |
-| `204 No Content` | Nema rezultata s traženim kriterijima pretrage/filtriranja. | - | - |
 | `304 Not Modified` | Resurs nije promijenjen od zadnjeg upita (za uštedu bandwidtha). | - | - |
 | `400 Bad Request` | Zahtjev nije ispravan. | Greška | - |
 | `401 Unauthorized` | Korisnik nije autentificiran. | Greška | `WWW-Authenticate` s popisom načina autentikacije |
@@ -742,7 +757,7 @@ Statusni kodovi i poruke grešaka moraju biti informativni i korisni.
 
 ---
 
-Može se dogoditi da klijent pošalje zahtjev koji nije sasvim neispravan, ali nije u potpunosti ispravan. Na primjer, kod paginacije klijent može poslati zahtjev za dohvat stranice koja ne postoji. Tada treba vratiti statusni kod `204 No Content`. Ili kada klijent zatraži više rezultata po stranici nego što je dozvoljeno. Tada treba uzeti u obzir da klijent ne zna koliko rezultata po stranici je dozvoljeno, pa je potrebno izvršiti paginaciju s najvećim dozvoljenim brojem rezultata po stranici.
+Može se dogoditi da klijent pošalje zahtjev koji nije sasvim neispravan, ali nije u potpunosti ispravan. Na primjer, kod paginacije klijent može poslati zahtjev za dohvat stranice koja ne postoji. Tada treba vratiti statusni kod `200 OK` uz prazan skup podataka (vidi upute za dohvat resursa). Ili kada klijent zatraži više rezultata po stranici nego što je dozvoljeno. Tada treba uzeti u obzir da klijent ne zna koliko rezultata po stranici je dozvoljeno, pa je potrebno izvršiti paginaciju s najvećim dozvoljenim brojem rezultata po stranici.
 
 Ako se pak radi o djelomičnom ažuriranju resursa (metoda `PATCH`) i klijent pošalje podatke koji ne postoje, tada bi bilo dobro ažurirati samo one podatke koji postoje, a ostale ignorirati. Razlog tome je što se može dogoditi da su neki atributi uklonjeni, ali klijent ne zna za tu promjenu.
 
