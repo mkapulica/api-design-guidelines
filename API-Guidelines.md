@@ -574,7 +574,6 @@ Mogući statusni kodovi i sadržaj odgovora:
 |--------------|------|---------------|------------------|
 | `200 OK` | Ažuriranje je uspješno izvršeno. | Resurs | - |
 | `202 Accepted` | Zahtjev je prihvaćen, ali nije završen. | - | - |
-| `204 No Content` | Ažuriranje je uspješno izvršeno (rezultat nije potrebno vratiti klijentu). | - | - |
 | `400 Bad Request` | Zahtjev nije ispravan. | Greška | - |
 | `401 Unauthorized` | Korisnik nije autentificiran. | Greška | `WWW-Authenticate` s popisom načina autentikacije |
 | `403 Forbidden` | Korisnik nema dozvolu za pristup resursu. | Greška | - |
