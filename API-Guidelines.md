@@ -505,7 +505,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 
 | Statusni kod | Opis | Response body | Response headers |
 |--------------|------|---------------|------------------|
-| `200 OK` | Akcija je uspješno izvršena. | Resurs | - |
+| `200 OK` | Akcija je uspješno izvršena. | Resurs / Rezultat akcije | - |
 | `201 Created` | Resurs je uspješno kreiran. | Resurs | `Location` s lokacijom novokreiranog resursa |
 | `202 Accepted` | Zahtjev je prihvaćen, ali nije završen. | - | - |
 | `204 No Content` | Akcija je uspješno izvršena (rezultat nije potrebno vratiti klijentu). | - | - |
