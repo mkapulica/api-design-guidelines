@@ -493,7 +493,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 
 **NAPOMENE:**
 
-- Kada se dohvaća resurs koji zahtijeva autorizaciju, a korisnik nije autoriziran, mora se vratiti statusni kod `403 Forbidden`, osim u slučaju da bi samo odavanje informacije postoji li resurs moglo predstavljati kršenje privatnosti ili narušavanje sigurnosti.
+- Kada se dohvaća resurs koji zahtijeva autorizaciju, a korisnik nije autoriziran, mora se vratiti statusni kod `403 Forbidden`, osim u slučaju da bi samo odavanje informacije postoji li resurs moglo predstavljati kršenje privatnosti ili narušavanje sigurnosti, tada se vraća `404 Not Found`.
 
 ### 4.2. POST
 
