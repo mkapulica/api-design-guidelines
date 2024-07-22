@@ -22,6 +22,7 @@ Ovaj projekt se temelji na bogatom iskustvu i smjernicama vodećih tehnoloških 
 - **Microsoft API Guidelines**: <https://github.com/microsoft/api-guidelines/>
 - **Google API Improvement Proposals**: <https://google.aip.dev/>
 - **JSON API**: <https://jsonapi.org/>
+- **API Design Patterns** by JJ Geewax *(ISBN: 978-1617295850)*
 
 ## Kako sudjelovati
 
