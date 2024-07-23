@@ -24,6 +24,7 @@ Ovaj projekt se temelji na bogatom iskustvu i smjernicama vodećih tehnoloških 
 - **JSON API**: <https://jsonapi.org/>
 - **Zalando RESTful API and Event Guidelines**: <https://opensource.zalando.com/restful-api-guidelines/>
 - Book: **API Design Patterns** by JJ Geewax *(ISBN: 978-1617295850)*
+- Book: **Designing Web APIs** by Brenda Jin, Saurabh Sahni, Amir Shevat *(ISBN: 9781492026921)*
 - Article: **How to design a RESTful API architecture from a human-language spec**: <https://www.oreilly.com/content/how-to-design-a-restful-api-architecture-from-a-human-language-spec/>
 - Article: **How We Design Our APIs at Slack**: <https://slack.engineering/how-we-design-our-apis-at-slack/>
 
