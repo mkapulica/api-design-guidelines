@@ -944,3 +944,4 @@ Link: <https://example.com/docs/v2>; rel="deprecation" type:"text/html"
 - greške u zahtjevima
 - rate-limiting
 - upotpuniti autentikaciju i autorizaciju
+- poglavlje dokumentacija
