@@ -858,8 +858,26 @@ Server upravlja svojim cacheom i daje upute klijentu kako da upravlja svojim cac
 
 ## 11. Dokumentacija
 
+Preporučuje se uporaba Swaggera, tj. OpenAPI specifikacije za dokumentaciju API-ja.
+Time se osigurava da dokumentacija bude usklađena s implementacijom API-ja.
+
+Dokumentacija mora sadržavati sljedeće informacije:
+
+- glavni URL API-ja
+- verziju API-ja
+- način autentikacije
+- popis resursa/akcija:
+  - URL resursa
+  - opis resursa/akcije
+  - parametre resursa/akcije i njihov opis, tip, informaciju jesu li obavezni ili ne, i defaultne vrijednosti
+  - sheme zahtjeva i odgovora
+  - primjere zahtjeva i odgovora
+  - moguće greške i njihov opis (uz statusne kodove)
+  - primjere grešaka
+- kontaktne podatke za pitanja i povratne informacije
+
 Treba biti jasno naznačeno tko kreira ID resursa, klijentska aplikacija ili server. Na primjer, naziv datoteke kreira aplikacija, a ID kreira server.
-Također, ako su neki atributi output only, to treba biti jasno naznačeno (kako?).
+Također, ako su neki atributi output only (poput ID-ja), to također treba biti jasno naznačeno.
 
 ## 12. Pojmovnik
 
@@ -944,4 +962,3 @@ Link: <https://example.com/docs/v2>; rel="deprecation" type:"text/html"
 - greške u zahtjevima
 - rate-limiting
 - upotpuniti autentikaciju i autorizaciju
-- poglavlje dokumentacija
