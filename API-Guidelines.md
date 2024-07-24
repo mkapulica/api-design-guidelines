@@ -943,3 +943,4 @@ Link: <https://example.com/docs/v2>; rel="deprecation" type:"text/html"
   - <https://cloud.ibm.com/docs/api-handbook?topic=api-handbook-long-running-operations>
 - greške u zahtjevima
 - rate-limiting
+- upotpuniti autentikaciju i autorizaciju
