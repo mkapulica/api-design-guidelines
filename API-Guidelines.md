@@ -47,6 +47,11 @@ API mora biti dizajniran tako da bude:
 - siguran
 - nadogradiv
 
+Dizajn API-ja bi trebao polaziti od potreba korisnika. Prije svega treba identificirati što korisnik želi postići koristeći se uslugom, te koje akcije može poduzeti kako bi ostvario svoje ciljeve.
+API ne bi smio biti organiziran kao preslika strukture baze podataka nego prema mogućnostima koje su korisnicima potrebne.
+
+Konzistentnost u API-ju je bitnija od ispravljanja neadekvatnih naziva resursa ili atributa. Jednom odabrani naziv potrebno je primjenjivati kroz cijeli API.
+
 ### 1.1. Imenovanje
 
 ---
