@@ -30,6 +30,7 @@ Ovaj projekt se temelji na bogatom iskustvu i smjernicama vodećih tehnoloških 
 - Članci:
   - **How to design a RESTful API architecture from a human-language spec**: <https://www.oreilly.com/content/how-to-design-a-restful-api-architecture-from-a-human-language-spec/>
   - **How We Design Our APIs at Slack**: <https://slack.engineering/how-we-design-our-apis-at-slack/>
+  - **Do RESTful API design rules have an impact on the understandability of Web APIs?**: <https://doi.org/10.1007/s10664-023-10367-y>
 
 ## Kako sudjelovati
 
