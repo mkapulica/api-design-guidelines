@@ -642,7 +642,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 
 | Statusni kod | Opis | Response body | Response headers |
 |--------------|------|---------------|------------------|
-| `200 OK` | Dohvat je uspješno izvršen. | - | `Allow` s popisom dozvoljenih metoda |
+| `200 OK` | Dohvat je uspješno izvršen. | Informacije o mogućim query parametrima | `Allow` s popisom dozvoljenih metoda |
 | `401 Unauthorized` | Korisnik nije autentificiran. | Greška | `WWW-Authenticate` s popisom načina autentikacije |
 | `403 Forbidden` | Korisnik nema dozvolu za pristup resursu. | Greška | - |
 | `404 Not Found` | Resurs nije pronađen. | Greška | - |
