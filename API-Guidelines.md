@@ -483,7 +483,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 | Statusni kod | Opis | Response body | Response headers |
 |--------------|------|---------------|------------------|
 | `200 OK` | Dohvat je uspješno izvršen. | Resurs | - |
-| `202 Accepted` | Zahtjev je prihvaćen, ali nije završen. | - | - |
+| `202 Accepted` | Zahtjev je prihvaćen, ali nije završen. | Informacije za praćenje statusa obrade | - |
 | `304 Not Modified` | Resurs nije promijenjen od zadnjeg upita (za uštedu bandwidtha). | - | - |
 | `400 Bad Request` | Zahtjev nije ispravan. | Greška | - |
 | `401 Unauthorized` | Korisnik nije autentificiran. | Greška | `WWW-Authenticate` s popisom načina autentikacije |
@@ -512,7 +512,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 |--------------|------|---------------|------------------|
 | `200 OK` | Akcija je uspješno izvršena. | Resurs / Rezultat akcije | - |
 | `201 Created` | Resurs je uspješno kreiran. | Resurs | `Location` s lokacijom novokreiranog resursa |
-| `202 Accepted` | Zahtjev je prihvaćen, ali nije završen. | - | - |
+| `202 Accepted` | Zahtjev je prihvaćen, ali nije završen. | Informacije za praćenje statusa obrade | - |
 | `204 No Content` | Akcija je uspješno izvršena (rezultat nije potrebno vratiti klijentu). | - | - |
 | `400 Bad Request` | Zahtjev nije ispravan. | Greška | - |
 | `401 Unauthorized` | Korisnik nije autentificiran. | Greška | `WWW-Authenticate` s popisom načina autentikacije |
@@ -543,7 +543,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 | Statusni kod | Opis | Response body | Response headers |
 |--------------|------|---------------|------------------|
 | `200 OK` | Ažuriranje je uspješno izvršeno. | Resurs | - |
-| `202 Accepted` | Zahtjev je prihvaćen, ali nije završen. | - | - |
+| `202 Accepted` | Zahtjev je prihvaćen, ali nije završen. | Informacije za praćenje statusa obrade | - |
 | `400 Bad Request` | Zahtjev nije ispravan. | Greška | - |
 | `401 Unauthorized` | Korisnik nije autentificiran. | Greška | `WWW-Authenticate` s popisom načina autentikacije |
 | `403 Forbidden` | Korisnik nema dozvolu za pristup resursu. | Greška | - |
@@ -578,7 +578,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 | Statusni kod | Opis | Response body | Response headers |
 |--------------|------|---------------|------------------|
 | `200 OK` | Ažuriranje je uspješno izvršeno. | Resurs | - |
-| `202 Accepted` | Zahtjev je prihvaćen, ali nije završen. | - | - |
+| `202 Accepted` | Zahtjev je prihvaćen, ali nije završen. | Informacije za praćenje statusa obrade | - |
 | `400 Bad Request` | Zahtjev nije ispravan. | Greška | - |
 | `401 Unauthorized` | Korisnik nije autentificiran. | Greška | `WWW-Authenticate` s popisom načina autentikacije |
 | `403 Forbidden` | Korisnik nema dozvolu za pristup resursu. | Greška | - |
@@ -610,7 +610,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 
 | Statusni kod | Opis | Response body | Response headers |
 |--------------|------|---------------|------------------|
-| `202 Accepted` | Zahtjev je prihvaćen, ali nije završen. | - | - |
+| `202 Accepted` | Zahtjev je prihvaćen, ali nije završen. | Informacije za praćenje statusa obrade | - |
 | `204 No Content` | Resurs je uspješno obrisan. | - | - |
 | `400 Bad Request` | Zahtjev nije ispravan. | Greška | - |
 | `401 Unauthorized` | Korisnik nije autentificiran. | Greška | `WWW-Authenticate` s popisom načina autentikacije |
