@@ -21,7 +21,6 @@
     - [4.6. OPTIONS](#46-options)
     - [4.7. HEAD](#47-head)
   - [5. Autentikacija](#5-autentikacija)
-    - [3.1. Primjer autentikacije](#31-primjer-autentikacije)
   - [6. Autorizacija](#6-autorizacija)
     - [6.1. Primjer autorizacije](#61-primjer-autorizacije)
   - [7. Logiranje](#7-logiranje)
@@ -682,44 +681,19 @@ Mogući statusni kodovi i sadržaj odgovora:
 
 ## 5. Autentikacija
 
-Za autentikaciju korisnika koristi se JWT (JSON Web Token).
-
-Kada se korisnik autentificira, server mora vratiti JWT koji sadrži korisnikove podatke.
-
-Ako korisnik nije autentificiran, server mora vratiti statusni kod `401 Unauthorized`.
-
-Ako JWT nije ispravan, server mora vratiti statusni kod `401 Unauthorized`.
-
-### 3.1. Primjer autentikacije
-
 - Autentikacija predstavlja proces provjere identiteta korisnika.
-- Kada se korisnik autentificira, server mora vratiti JWT.
-
-Primjer odgovora:
-
-```http
-HTTP/1.1 200 OK
-Content-Type: application/json
-
-{
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VyX25hbWUiOiJKb2huIERvZSIsInVzZXJfZW1haWwiOiJqb2huQGVtYWlsLmNvbSJ9.3JVAJ9Jf
-}
-```
-
-- Ako resurs zahtijeva provjeru identiteta korisnika, korisnik mora poslati JWT.
-- Ako korisnik nije autentificiran, a resurs nije javno dostupan, server mora vratiti statusni kod `401 Unauthorized`.
-- Ako je korisnik autentificiran, a JWT nije ispravan, server mora vratiti statusni kod `401 Unauthorized`.
-- Ako je korisnik autentificiran, ali nema potrebnu ulogu za pristup resursu, server mora vratiti statusni kod `403 Forbidden`.
+- Kada se korisnik autentificira, server mora vratiti access token kao JWT, i refresh token.
+- Access token se upotrebljava za autorizaciju korisnika, a refresh token za dobivanje novog access tokena.
 
 ## 6. Autorizacija
 
 - Autorizacija je proces određivanja prava pristupa resursima.
-- Korisnik mora imati odgovarajuću ulogu kako bi pristupio određenom resursu.
-- Ako korisnik nema odgovarajuću ulogu, server mora vratiti statusni kod `403 Forbidden`, osim u slučaju da bi samo odavanje informacije postoji li resurs moglo predstavljati kršenje privatnosti ili narušavanje sigurnosti. Tada se mora vratiti statusni kod `404 Not Found`.
+- Ako resurs nije javno dostupan, a korisnik ne pošalje valjani access token, server mora vratiti statusni kod `401 Unauthorized`.
+- Ako korisnik nema odgovarajuću ulogu za traženu akciju, server mora vratiti statusni kod `403 Forbidden`, osim u slučaju da bi samo odavanje informacije postoji li resurs moglo predstavljati kršenje privatnosti ili narušavanje sigurnosti. Tada se mora vratiti statusni kod `404 Not Found`.
 
 ### 6.1. Primjer autorizacije
 
-Kada korisnik pokuša pristupiti resursu koji zahtijeva autorizaciju, mora poslati JWT.
+Kada korisnik pokuša pristupiti resursu koji zahtijeva autorizaciju, mora poslati access token.
 
 Primjer zahtjeva:
 
