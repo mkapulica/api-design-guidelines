@@ -260,6 +260,16 @@ ili za resurs s ugniježđenim resursima...
 }
 ```
 
+U slučaju da *array* (niz) ne sadrži podatke, tada se vraća prazan *array*, a ne `null`:
+
+```json
+{
+  "data": {
+    "collectionName": []
+  }
+}
+```
+
 API bi trebao imati **osnovni URL** koji se sastoji od verzije API-ja, npr. `https://example.com/api/v1`.
 
 API bi trebao imati **statusni endpoint** (`/status`) koji vraća status i detalje API-ja:
