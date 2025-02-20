@@ -64,7 +64,7 @@ Kod imenovanja resursa, atributa i parametara treba se pridržavati sljedećih p
 | **Nazivi resursa** moraju biti **imenice**. | `/users` | `/get-users` |
 | **Kolekcije** moraju biti dostupne na URL-ovima s imenicom u **množini**. | `/users` | `/user` |
 | Kada resurs **nije kolekcija**, tada se upotrebljava imenica u **jednini**. | `/account` | `/accounts` |
-| Imena **resursa** moraju biti u `kebab-case` formatu. | `/academic-year` </br> `/messaging-group` | `/academic_year` </br> `/academicYear` |
+| Imena **resursa** moraju biti u `kebab-case` formatu. | `/academic-years` </br> `/messaging-groups` | `/academic_years` </br> `/academicYears` |
 | Imena **atributa i parametara** moraju biti u `camelCase` formatu. | `firstName` </br> `lastName` | `first_name` </br> `FirstName` |
 | **Izbjegavati redundanciju** u imenima resursa, atributa i parametara. | `/users/{id}/groups` | `/users/{id}/user-groups` |
 | **Kratice** se pišu **malim slovima**, poput riječi. | `id` </br> `userId` | `ID` </br> `URL` |
@@ -369,7 +369,7 @@ Upotrijebi `/collection/-/collection/{id}` za **određeni** ugniježđeni resurs
 | Dohvat više resursa s različitim ID-jevima | POST | `/collection/actions/batch-fetch` | `POST /users/actions/batch-fetch` s request bodyjem `{"ids": ["1", "2", "3"]}` |
 | Dohvat svih resursa | GET | `/collection` | `GET /users` |
 | Filtriranje | GET | `/collection?attribute=value` | `GET /users?name=John&age=20` |
-| Filtriranje (poseban filter) | GET | `/collection/{filter}` | `GET /academic-year/current` za dohvat trenutne akademske godine |
+| Filtriranje (poseban filter) | GET | `/collection/{filter}` | `GET /academic-years/current` za dohvat trenutne akademske godine |
 | Sortiranje | GET | `/collection?orderBy=field:direction,field:direction` | `GET /users?orderBy=name:asc,age:desc` |
 | Paginacija (offset) | GET | `/collection?pageSize=10&page=2` | `GET /users?pageSize=10&page=2` |
 | Paginacija (cursor) | GET | `/collection?pageSize=10&pageToken=token` | `GET /users?pageSize=10&pageToken=token` |
