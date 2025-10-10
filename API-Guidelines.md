@@ -681,13 +681,13 @@ Mogući statusni kodovi i sadržaj odgovora:
 | Statusni kod | Opis | Response body | Response headers |
 |--------------|------|---------------|------------------|
 | `200 OK` | Dohvat je uspješno izvršen. | - | - |
-| `401 Unauthorized` | Korisnik nije autentificiran. | Greška | `WWW-Authenticate` s popisom načina autentikacije |
-| `403 Forbidden` | Korisnik nema dozvolu za pristup resursu. | Greška | - |
-| `404 Not Found` | Resurs nije pronađen. | Greška | - |
+| `401 Unauthorized` | Korisnik nije autentificiran. | - | `WWW-Authenticate` s popisom načina autentikacije |
+| `403 Forbidden` | Korisnik nema dozvolu za pristup resursu. | - | - |
+| `404 Not Found` | Resurs nije pronađen. | - | - |
 | `410 Gone` | Resurs je uklonjen (izbrisan). | - | - |
-| `500 Internal Server Error` | Greška na serveru. | Greška | - |
-| `503 Service Unavailable` | Servis nije dostupan. | Greška | - |
-| `504 Gateway Timeout` | Vrijeme odgovora je isteklo. | Greška | - |
+| `500 Internal Server Error` | Greška na serveru. | - | - |
+| `503 Service Unavailable` | Servis nije dostupan. | - | - |
+| `504 Gateway Timeout` | Vrijeme odgovora je isteklo. | - | - |
 
 **NAPOMENE:**
 
