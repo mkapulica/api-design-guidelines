@@ -500,6 +500,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 | `404 Not Found` | Resurs nije pronađen (ili korisnik nema dozvolu). | Greška | - |
 | `405 Method Not Allowed` | Metoda nije dozvoljena za traženi resurs. | Greška | `Allow` s popisom dozvoljenih metoda |
 | `406 Not Acceptable` | Traženi format odgovora nije podržan (npr. zatražen XML umjesto JSON-a). | Greška | - |
+| `410 Gone` | Resurs je uklonjen (izbrisan). | Greška | - |
 | `429 Too Many Requests` | Premašen limit zahtjeva. | Greška | - |
 | `500 Internal Server Error` | Greška na serveru. | Greška | - |
 | `503 Service Unavailable` | Servis nije dostupan. | Greška | - |
@@ -513,7 +514,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 
 ---
 
-> Za kreiranje resursa (CREATE).
+> Za kreiranje resursa (CREATE) i akcije.
 
 Mogući statusni kodovi i sadržaj odgovora:
 
@@ -530,6 +531,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 | `405 Method Not Allowed` | Metoda nije dozvoljena za traženi resurs. | Greška | `Allow` s popisom dozvoljenih metoda |
 | `406 Not Acceptable` | Traženi format odgovora nije podržan (npr. zatražen XML umjesto JSON-a). | Greška | - |
 | `409 Conflict` | Resurs već postoji. | Greška | - |
+| `410 Gone` | Resurs je uklonjen (izbrisan). | Greška | - |
 | `415 Unsupported Media Type` | Tip medija nije podržan (primjerice klijent šalje XML umjesto JSON-a). | Greška | - |
 | `429 Too Many Requests` | Premašen limit zahtjeva. | Greška | - |
 | `500 Internal Server Error` | Greška na serveru. | Greška | - |
@@ -560,6 +562,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 | `405 Method Not Allowed` | Metoda nije dozvoljena za traženi resurs. | Greška | `Allow` s popisom dozvoljenih metoda |
 | `406 Not Acceptable` | Traženi format odgovora nije podržan (npr. zatražen XML umjesto JSON-a). | Greška | - |
 | `409 Conflict` | Resurs nije moguće ažurirati zbog konflikta. | Greška | - |
+| `410 Gone` | Resurs je uklonjen (izbrisan). | Greška | - |
 | `415 Unsupported Media Type` | Tip medija nije podržan (primjerice klijent šalje XML umjesto JSON-a). | Greška | - |
 | `429 Too Many Requests` | Premašen limit zahtjeva. | Greška | - |
 | `500 Internal Server Error` | Greška na serveru. | Greška | - |
@@ -595,6 +598,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 | `405 Method Not Allowed` | Metoda nije dozvoljena za traženi resurs. | Greška | `Allow` s popisom dozvoljenih metoda |
 | `406 Not Acceptable` | Traženi format odgovora nije podržan (npr. zatražen XML umjesto JSON-a). | Greška | - |
 | `409 Conflict` | Resurs nije moguće ažurirati zbog konflikta. | Greška | - |
+| `410 Gone` | Resurs je uklonjen (izbrisan). | Greška | - |
 | `415 Unsupported Media Type` | Tip medija nije podržan (primjerice klijent šalje XML umjesto JSON-a). | Greška | - |
 | `429 Too Many Requests` | Premašen limit zahtjeva. | Greška | - |
 | `500 Internal Server Error` | Greška na serveru. | Greška | - |
@@ -627,6 +631,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 | `404 Not Found` | Resurs nije pronađen (ili korisnik nema dozvolu). | Greška | - |
 | `405 Method Not Allowed` | Metoda nije dozvoljena za traženi resurs. | Greška | `Allow` s popisom dozvoljenih metoda |
 | `409 Conflict` | Resurs nije moguće izbrisati zbog konflikta. | Greška | - |
+| `410 Gone` | Resurs je uklonjen (izbrisan). | Greška | - |
 | `429 Too Many Requests` | Premašen limit zahtjeva. | Greška | - |
 | `500 Internal Server Error` | Greška na serveru. | Greška | - |
 | `503 Service Unavailable` | Servis nije dostupan. | Greška | - |
@@ -679,6 +684,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 | `401 Unauthorized` | Korisnik nije autentificiran. | Greška | `WWW-Authenticate` s popisom načina autentikacije |
 | `403 Forbidden` | Korisnik nema dozvolu za pristup resursu. | Greška | - |
 | `404 Not Found` | Resurs nije pronađen. | Greška | - |
+| `410 Gone` | Resurs je uklonjen (izbrisan). | - | - |
 | `500 Internal Server Error` | Greška na serveru. | Greška | - |
 | `503 Service Unavailable` | Servis nije dostupan. | Greška | - |
 | `504 Gateway Timeout` | Vrijeme odgovora je isteklo. | Greška | - |
@@ -833,6 +839,7 @@ Server upravlja svojim cacheom i daje upute klijentu kako da upravlja svojim cac
 - `405 Method Not Allowed` - metoda nije podržana
 - `406 Not Acceptable` - traženi format odgovora nije podržan (npr. zatražen XML umjesto JSON-a)
 - `409 Conflict` - resurs već postoji
+- `410 Gone` - resurs je uklonjen, tj. izbrisan (ako je potrebno znati da je postojao, inače upotrijebiti `404 Not Found`)
 - `415 Unsupported Media Type` - tip medija nije podržan (primjerice XML umjesto JSON-a)
 - `429 Too Many Requests` - premašen limit zahtjeva
 - `500 Internal Server Error` - greška na serveru
