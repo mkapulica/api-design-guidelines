@@ -807,7 +807,7 @@ Server upravlja svojim cacheom i daje upute klijentu kako da upravlja svojim cac
 - Upotrebom HTTP zaglavlja `Cache-Control` za upravljanje cacheom na klijentu. Slijedi opis mogućih vrijednosti `Cache-Control` zaglavlja:
   - `public` - odgovor se može pohraniti u cache i dijeliti s drugim korisnicima
   - `private` - odgovor se može pohraniti u cache samo na klijentu
-  - `no-cache` - odgovor se ne može pohraniti u cache
+  - `no-cache` - odgovor se smije pohraniti u cache, ali se mora provjeriti sa serverom prije ponovne upotrebe
   - `no-store` - odgovor se ne smije pohraniti u cache
   - `max-age` - maksimalno vrijeme u sekundama na koje se odgovor može pohraniti u cache
   - `s-maxage` - maksimalno vrijeme u sekundama na koje se odgovor može pohraniti u cache na shared cacheu
