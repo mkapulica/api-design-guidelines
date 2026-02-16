@@ -58,7 +58,7 @@ Konzistentnost u API-ju je bitnija od ispravljanja neadekvatnih naziva resursa i
 Kod imenovanja resursa, atributa i parametara treba se pridržavati sljedećih pravila:
 
 | 📜 Pravilo | ✅ Primjer | ⛔ Izbjegavati |
-|---------|---------|-------------|
+| ----------- | ---------- | --------------- |
 | **Nazivi** resursa, atributa i parametara moraju biti na (američkom) **engleskom** jeziku. | `/users` </br> `/colors` | `/korisnici` </br> `/colours` |
 | **Nazivi** resursa, atributa i parametara moraju biti **kratki, jasni i ne preopćeniti**. | `/product` | `/item` |
 | **Nazivi resursa** moraju biti **imenice**. | `/users` | `/get-users` |
@@ -136,7 +136,7 @@ Oni se mogu u nekim slučajevima nadopuniti kako bi bili preciznije određeni, p
 Sljedeći nazivi se trebaju upotrebljavati kada se pojavljuju isti koncepti. Time se osigurava konzistentnost i jasnoća kroz različite dijelove API-ja.
 
 | Naziv             | Tip                      | Opis |
-|-------------------|--------------------------|------|
+| ----------------- | ------------------------ | ---- |
 | `name`            | `string`                 | Polje name treba sadržavati relativno ime resursa. |
 | `parent`          | `string`                 | Za definicije resursa i zahtjeve za dohvaćanje/kreiranje, polje parent treba sadržavati relativno ime roditeljskog resursa. |
 | `createTime`      | `Timestamp`              | Vrijeme kreiranja entiteta. |
@@ -364,7 +364,7 @@ Upotrijebi `/collection/-/collection/{id}` za **određeni** ugniježđeni resurs
 ---
 
 | Akcija | Metoda | Request URL | Primjer |
-|--------|--------|----------|---------|
+| ------ | ------ | ----------- | ------- |
 | Dohvat jednog resursa po ID-ju | GET | `/collection/{id}` | `GET /users/1234` umjesto `GET /users?id=1234` |
 | Dohvat više resursa s različitim ID-jevima | POST | `/collection/actions/batch-fetch` | `POST /users/actions/batch-fetch` s request bodyjem `{"ids": ["1", "2", "3"]}` |
 | Dohvat svih resursa | GET | `/collection` | `GET /users` |
@@ -490,7 +490,7 @@ ili...
 Mogući statusni kodovi i sadržaj odgovora:
 
 | Statusni kod | Opis | Response body | Response headers |
-|--------------|------|---------------|------------------|
+| ------------ | ---- | ------------- | ---------------- |
 | `200 OK` | Dohvat je uspješno izvršen. | Resurs | - |
 | `202 Accepted` | Zahtjev je prihvaćen, ali nije završen. | Informacije za praćenje statusa obrade | - |
 | `304 Not Modified` | Resurs nije promijenjen od zadnjeg upita (za uštedu bandwidtha). | - | - |
@@ -519,7 +519,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 Mogući statusni kodovi i sadržaj odgovora:
 
 | Statusni kod | Opis | Response body | Response headers |
-|--------------|------|---------------|------------------|
+| ------------ | ---- | ------------- | ---------------- |
 | `200 OK` | Akcija je uspješno izvršena. | Resurs / Rezultat akcije | - |
 | `201 Created` | Resurs je uspješno kreiran. | Resurs | `Location` s lokacijom novokreiranog resursa |
 | `202 Accepted` | Zahtjev je prihvaćen, ali nije završen. | Informacije za praćenje statusa obrade | - |
@@ -552,7 +552,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 Mogući statusni kodovi i sadržaj odgovora:
 
 | Statusni kod | Opis | Response body | Response headers |
-|--------------|------|---------------|------------------|
+| ------------ | ---- | ------------- | ---------------- |
 | `200 OK` | Ažuriranje je uspješno izvršeno. | Resurs | - |
 | `202 Accepted` | Zahtjev je prihvaćen, ali nije završen. | Informacije za praćenje statusa obrade | - |
 | `400 Bad Request` | Zahtjev nije ispravan. | Greška | - |
@@ -588,7 +588,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 Mogući statusni kodovi i sadržaj odgovora:
 
 | Statusni kod | Opis | Response body | Response headers |
-|--------------|------|---------------|------------------|
+| ------------ | ---- | ------------- | ---------------- |
 | `200 OK` | Ažuriranje je uspješno izvršeno. | Resurs | - |
 | `202 Accepted` | Zahtjev je prihvaćen, ali nije završen. | Informacije za praćenje statusa obrade | - |
 | `400 Bad Request` | Zahtjev nije ispravan. | Greška | - |
@@ -622,7 +622,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 Mogući statusni kodovi i sadržaj odgovora:
 
 | Statusni kod | Opis | Response body | Response headers |
-|--------------|------|---------------|------------------|
+| ------------ | ---- | ------------- | ---------------- |
 | `202 Accepted` | Zahtjev je prihvaćen, ali nije završen. | Informacije za praćenje statusa obrade | - |
 | `204 No Content` | Resurs je uspješno obrisan. | - | - |
 | `400 Bad Request` | Zahtjev nije ispravan. | Greška | - |
@@ -655,7 +655,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 Mogući statusni kodovi i sadržaj odgovora:
 
 | Statusni kod | Opis | Response body | Response headers |
-|--------------|------|---------------|------------------|
+| ------------ | ---- | ------------- | ---------------- |
 | `200 OK` | Dohvat je uspješno izvršen. | Informacije o mogućim query parametrima | `Allow` s popisom dozvoljenih metoda |
 | `401 Unauthorized` | Korisnik nije autentificiran. | Greška | `WWW-Authenticate` s popisom načina autentikacije |
 | `403 Forbidden` | Korisnik nema dozvolu za pristup resursu. | Greška | - |
@@ -679,7 +679,7 @@ Mogući statusni kodovi i sadržaj odgovora:
 Mogući statusni kodovi i sadržaj odgovora:
 
 | Statusni kod | Opis | Response body | Response headers |
-|--------------|------|---------------|------------------|
+| ------------ | ---- | ------------- | ---------------- |
 | `200 OK` | Dohvat je uspješno izvršen. | - | - |
 | `401 Unauthorized` | Korisnik nije autentificiran. | - | `WWW-Authenticate` s popisom načina autentikacije |
 | `403 Forbidden` | Korisnik nema dozvolu za pristup resursu. | - | - |
