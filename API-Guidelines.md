@@ -153,7 +153,7 @@ Sljedeći nazivi se trebaju upotrebljavati kada se pojavljuju isti koncepti. Tim
 | `displayName`     | `string`                 | Prikazano ime entiteta. |
 | `title`           | `string`                 | Službeno ime entiteta, kao što je naziv tvrtke. Treba se tretirati kao formalna verzija prikazanog imena. |
 | `description`     | `string`                 | Jedan ili više paragrafa teksta s opisom entiteta. |
-| `filter`          | `string`                 | Standardni parametar filtra za metode popisa. Pogledajte AIP-160. |
+| `filter`          | `string`                 | Standardni parametar filtra za metode popisa. |
 | `query`           | `string`                 | Isto kao i filter ako se primjenjuje na metodu pretraživanja (npr. :search) |
 | `pageToken`       | `string`                 | Token za paginaciju u zahtjevu za popis. |
 | `page`            | `int32`                  | Stranica u paginaciji (query parametar). |
