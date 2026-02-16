@@ -140,7 +140,7 @@ Sljedeći nazivi se trebaju upotrebljavati kada se pojavljuju isti koncepti. Tim
 | `name`            | `string`                 | Polje name treba sadržavati relativno ime resursa. |
 | `parent`          | `string`                 | Za definicije resursa i zahtjeve za dohvaćanje/kreiranje, polje parent treba sadržavati relativno ime roditeljskog resursa. |
 | `createTime`      | `Timestamp`              | Vrijeme kreiranja entiteta. |
-| `updateTime`      | `Timestamp`              | Vrijeme posljednjeg ažuriranja entiteta. Napomena: update_time se ažurira kada se izvrši operacija kreiranja/ažuriranja/brisanja. |
+| `updateTime`      | `Timestamp`              | Vrijeme posljednjeg ažuriranja entiteta. Napomena: updateTime se ažurira kada se izvrši operacija kreiranja/ažuriranja/brisanja. |
 | `deleteTime`      | `Timestamp`              | Vrijeme brisanja entiteta, samo ako se entitet označava kao obrisan. |
 | `expireTime`      | `Timestamp`              | Vrijeme isteka entiteta ako isti istekne. |
 | `startTime`       | `Timestamp`              | Vrijeme početka određenog vremenskog razdoblja. |
