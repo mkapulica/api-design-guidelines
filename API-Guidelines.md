@@ -166,7 +166,7 @@ Sljedeći nazivi se trebaju upotrebljavati kada se pojavljuju isti koncepti. Tim
 | `progressPercent` | `int32`                  | Navodi napredak akcije u postocima (0-100). Vrijednost -1 znači da je napredak nepoznat. |
 | `requestId`       | `string`                 | Jedinstveni ID string za otkrivanje dupliciranih zahtjeva. |
 | `labels`          | `map<string, string>`    | Predstavlja korisničke oznake resursa. |
-| `showDeleted`     | `bool`                   | Ako resurs dopušta povratak izbrisanih entiteta, metoda dohvata kolekcije mora imati parametar show_deleted kako bi klijent mogao otkriti obrisane resurse. |
+| `showDeleted`     | `bool`                   | Ako resurs dopušta povratak izbrisanih entiteta, metoda dohvata kolekcije mora imati parametar showDeleted kako bi klijent mogao otkriti obrisane resurse. |
 | `validateOnly`    | `bool`                   | Ako je true, označava da se zahtjev samo treba validirati, a ne izvršiti. |
 
 ### 1.2. Bool vs. Enum vs. String
