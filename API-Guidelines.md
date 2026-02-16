@@ -391,7 +391,7 @@ Ako primijenjeni filtri ili parametri paginacije **ne daju rezultate**, API tada
   },
   "pagination": {
     "currentPage": 1,
-    "pageSize": 0,
+    "pageSize": 10,
     "totalPages": 0,
     "totalSize": 0
   }
