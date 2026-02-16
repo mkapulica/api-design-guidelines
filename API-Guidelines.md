@@ -805,7 +805,7 @@ Caching se može upotrijebiti za pohranu odgovora na serveru ili na klijentu, u 
 Server upravlja svojim cacheom i daje upute klijentu kako da upravlja svojim cacheom. To može činiti na sljedeće načine:
 
 - Upotrebom HTTP zaglavlja `Cache-Control` za upravljanje cacheom na klijentu. Slijedi opis mogućih vrijednosti `Cache-Control` zaglavlja:
-  - `public` - odgovor se može pohraniti u cache i dijeliti s drugim korisnicima
+  - `public` - odgovor se može pohraniti u cache na klijentu i u dijeljenom cacheu (CDN, proxy)
   - `private` - odgovor se može pohraniti u cache samo na klijentu
   - `no-cache` - odgovor se smije pohraniti u cache, ali se mora provjeriti sa serverom prije ponovne upotrebe
   - `no-store` - odgovor se ne smije pohraniti u cache
