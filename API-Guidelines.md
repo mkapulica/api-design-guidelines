@@ -388,7 +388,7 @@ Ako primijenjeni filtri ili parametri paginacije **ne daju rezultate**, API tada
 {
   "data": {
     "users": []
-  }
+  },
   "pagination": {
     "currentPage": 1,
     "pageSize": 0,
