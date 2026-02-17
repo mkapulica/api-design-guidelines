@@ -912,17 +912,101 @@ Ukratko, drži se sljedećih pravila:
 
 ## 14. Long-running operations
 
-Ako je operacija koja se izvršava na serveru duža od normalnog vremena odgovora, tada se mora vratiti statusni kod `202 Accepted` zajedno s long-running operation.
+Ako je operacija koja se izvršava na serveru duža od normalnog vremena odgovora, tada se mora vratiti statusni kod `202 Accepted` zajedno s informacijama za praćenje statusa obrade u obliku poveznice na long-running operation resurs kroz `Location` zaglavlje.
+Poželjno je da se pošalje i zaglavlje `Retry-After` koje sadrži vrijeme u sekundama nakon kojeg klijent može provjeriti status operacije.
 
-Long-running operation je resurs koji sadrži informacije o statusu operacije, kao što su `status`, `progress`, `result` i sl.
+Primjer:
 
-Primjer long-running akcije:
+```http
+HTTP/1.1 202 Accepted
+Location: https://example.com/api/v1/operations/1234
+Retry-After: 30
+```
+
+Long-running operation kolekcija se nalazi pod `/operations`, a pojedinačni long-running operation resurs se nalazi pod `/operations/{id}`.
+Dohvat long-running operation resursa vraća informacije o statusu obrade ovisno o statusu.
+
+Mogući statusi long-running operacije su:
+
+- `OPERATION_STATUS_UNKNOWN` - status nije poznat (rezervirano za backwards compatibility)
+- `NOT_STARTED` - operacija nije započela
+- `IN_PROGRESS` - operacija je u tijeku
+- `SUCCEEDED` - operacija je uspješno završila
+- `FAILED` - operacija je završila s greškom
+- `CANCELLED` - operacija je otkazana
+
+Primjer operacije u tijeku:
 
 ```json
 {
-  "status": "running",
-  "progress": 50,
-  "result": null
+  "data": {
+    "operation": {
+        "id": "1234",
+        "status": "IN_PROGRESS",
+        "type": "generateReport",
+        "createdAt": "2024-06-01T12:00:00Z",
+        "updatedAt": "2024-06-01T12:30:00Z",
+        "percentComplete": 50.1,
+    }
+  }
+}
+```
+
+Primjer operacije koja je uspješno završila:
+
+```json
+{
+  "data": {
+    "operation": {
+        "id": "1234",
+        "status": "SUCCEEDED",
+        "type": "generateReport",
+        "createdAt": "2024-06-01T12:00:00Z",
+        "updatedAt": "2024-06-01T12:30:00Z",
+        "percentComplete": 100,
+        "result": {
+            "reportUrl": "/reports/1234"
+        }
+    }
+  }
+}
+```
+
+Primer operacije koja je završila s greškom:
+
+```json
+{
+  "data": {
+    "operation": {
+        "id": "1234",
+        "status": "FAILED",
+        "type": "generateReport",
+        "createdAt": "2024-06-01T12:00:00Z",
+        "updatedAt": "2024-06-01T12:30:00Z",
+        "percentComplete": 75.5,
+        "error": {
+            "code": "reportGenerationFailed",
+            "message": "Failed to generate report due to insufficient data."
+        }
+    }
+  }
+}
+```
+
+Primjer operacije koja je otkazana:
+
+```json
+{
+  "data": {
+    "operation": {
+        "id": "1234",
+        "status": "CANCELLED",
+        "type": "generateReport",
+        "createdAt": "2024-06-01T12:00:00Z",
+        "updatedAt": "2024-06-01T12:30:00Z",
+        "percentComplete": 60,
+    }
+  }
 }
 ```
 
