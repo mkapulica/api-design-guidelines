@@ -930,7 +930,7 @@ Primjer long-running akcije:
 
 Kada se API mijenja, a neke metode ili resursi postaju zastarjeli, tada se mora obavijestiti korisnike o depriciranim resursima i metodama.
 
-To se može napraviti slanjem [`Deprecation`](https://datatracker.ietf.org/doc/html/draft-ietf-httpapi-deprecation-header) HTTP zaglavlja u odgovoru zajedno s UNIX timestampom od kada je resurs ili metoda zastarjela. Uz `Deprecation` zaglavlje može se poslati i `Sunset` zaglavlje koje sadrži ljudski čitljiv datum kada će resurs ili metoda biti uklonjeni, te `Link` zaglavlje s poveznicom na dokumentaciju o promjenama.
+To se može napraviti slanjem [`Deprecation`](https://datatracker.ietf.org/doc/rfc9745/) HTTP zaglavlja u odgovoru zajedno s UNIX timestampom od kada je resurs ili metoda zastarjela. Uz `Deprecation` zaglavlje može se poslati i `Sunset` zaglavlje koje sadrži ljudski čitljiv datum kada će resurs ili metoda biti uklonjeni, te `Link` zaglavlje s poveznicom na dokumentaciju o promjenama.
 
 Primjer HTTP zaglavlja:
 
